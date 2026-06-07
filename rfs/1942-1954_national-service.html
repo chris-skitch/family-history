@@ -281,11 +281,899 @@
     nav.figures{padding:1.2rem 1.2rem 1.3rem;}
   }
 
+  /* ---- ToC nav system (sidebar + drawer + filter + scrollspy) ---- */
+  /* When the ToC is active the page swaps to a sidebar layout — the
+     reading column stays at --measure but is offset by the sidebar on
+     wide screens. Mobile collapses to a floating action button + drawer. */
+  :root{ --sidebar:300px; }
+  body.has-toc .wrap{ max-width:none; padding:0; margin:0; }
+  body.has-toc .layout{
+    display:grid;
+    grid-template-columns:var(--sidebar) minmax(0,1fr);
+    max-width:1080px;
+    margin:0 auto;
+  }
+  body.has-toc .article{
+    padding:3.5rem 24px 6rem;
+    max-width:calc(var(--measure) + 48px);
+    margin:0 auto;
+  }
+  body.has-toc aside.toc-rail{
+    position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto;
+    border-right:1px solid var(--rule); padding:1.6rem 1rem 2rem;
+    background:var(--paper-edge);
+  }
+  body.has-toc aside.toc-rail .railhead{
+    font-family:"Fraunces",serif; font-weight:700; font-size:.72rem;
+    letter-spacing:.16em; text-transform:uppercase;
+    color:var(--accent-deep); margin:0 0 .8rem;
+  }
+  /* Shared ToC list styling (used by both the rail and the drawer) */
+  .toc-list{font-size:.92rem;}
+  .toc-grp{border-bottom:1px solid var(--rule);}
+  .toc-ghead{
+    display:flex; align-items:center; gap:.5rem; width:100%; text-align:left;
+    background:none; border:none; cursor:pointer; padding:.5rem .4rem;
+    font-family:"Fraunces",serif; font-weight:600; font-size:.92rem;
+    color:var(--ink); line-height:1.25;
+  }
+  .toc-ghead .car{color:var(--accent); transition:transform .2s;
+    font-size:.7rem; flex:none;}
+  .toc-grp.open .car{transform:rotate(90deg);}
+  .toc-ghead .gc{margin-left:auto; font-size:.62rem; color:var(--ink-faint);
+    font-family:"Newsreader",serif; flex:none;}
+  .toc-kids{display:none; padding:0 0 .4rem .95rem;}
+  .toc-grp.open .toc-kids{display:block;}
+  .toc-kids a{
+    display:block; text-decoration:none; color:var(--ink-soft);
+    font-size:.86rem; padding:.3rem .5rem;
+    border-left:2px solid transparent; cursor:pointer; line-height:1.4;
+  }
+  .toc-kids a:hover{color:var(--accent-deep);}
+  .toc-kids a.active{
+    color:var(--accent-deep); border-left-color:var(--accent);
+    background:var(--paper); font-weight:600;
+  }
+  .toc-filter{
+    width:100%; margin:0 0 .7rem; padding:.5rem .65rem;
+    border:1px solid var(--rule); border-radius:8px;
+    font-family:"Newsreader",serif; font-size:.9rem;
+    background:var(--paper); color:var(--ink);
+  }
+  .toc-filter::placeholder{color:var(--ink-faint);}
+  .toc-empty{padding:1rem .6rem; color:var(--ink-faint);
+    font-style:italic; font-size:.88rem;}
+
+  /* Mobile FAB + drawer */
+  .toc-fab{
+    position:fixed; right:18px; bottom:18px; z-index:60;
+    display:none; align-items:center; gap:.4rem;
+    background:var(--accent); color:#fff; border:none; cursor:pointer;
+    font-family:"Fraunces",serif; font-weight:600; font-size:.9rem;
+    padding:.7rem 1.05rem; border-radius:999px;
+    box-shadow:0 8px 22px -8px rgba(124,66,38,.65);
+  }
+  .toc-fab:hover{background:var(--accent-deep);}
+  .toc-overlay{
+    position:fixed; inset:0; z-index:70; background:rgba(42,37,32,.3);
+    opacity:0; pointer-events:none; transition:opacity .25s;
+  }
+  .toc-overlay.open{opacity:1; pointer-events:auto;}
+  .toc-drawer{
+    position:fixed; z-index:80; background:var(--paper);
+    display:flex; flex-direction:column;
+    transition:transform .28s cubic-bezier(.2,.7,.2,1);
+    top:0; right:0; bottom:0; width:340px; max-width:88%;
+    border-left:1px solid var(--rule);
+    transform:translateX(102%);
+    box-shadow:-14px 0 34px -20px rgba(42,37,32,.5);
+  }
+  .toc-drawer.open{transform:none;}
+  .toc-dhead{padding:.9rem 1rem .6rem; border-bottom:1px solid var(--rule);}
+  .toc-dhead .t{
+    font-family:"Fraunces",serif; font-weight:700; font-size:.74rem;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--accent-deep);
+  }
+  .toc-dhead .x{
+    float:right; cursor:pointer; color:var(--ink-faint);
+    border:none; background:none; font-size:1.15rem; line-height:1;
+  }
+  .toc-dlist{overflow-y:auto; padding:.7rem .8rem 2rem; flex:1;}
+  /* Current-section pill, mobile only */
+  .toc-nowbar{
+    position:fixed; top:0; left:0; right:0; z-index:55; display:none;
+    background:var(--paper-edge); border-bottom:1px solid var(--rule);
+    padding:.5rem 1rem;
+    font-family:"Fraunces",serif; font-size:.8rem;
+    color:var(--accent-deep); font-weight:600;
+  }
+  @media (max-width:860px){
+    body.has-toc .layout{grid-template-columns:1fr;}
+    body.has-toc aside.toc-rail{display:none;}
+    body.has-toc .toc-fab{display:flex;}
+    body.has-toc .toc-nowbar{display:block;}
+    body.has-toc .article{padding-top:3.2rem;}
+    .toc-drawer{
+      top:auto; left:0; right:0; bottom:0; width:100%; max-width:100%;
+      height:80%; border-left:none; border-top:1px solid var(--rule);
+      border-radius:16px 16px 0 0; transform:translateY(103%);
+      box-shadow:0 -14px 34px -20px rgba(42,37,32,.5);
+    }
+    .toc-drawer.open{transform:none;}
+  }
+  /* h2/h3 scroll-margin so the in-page anchor doesn't land flush under the nowbar */
+  body.has-toc article h2, body.has-toc article h3{scroll-margin-top:1rem;}
+
 </style>
 </head>
-<body>
+<body class="has-toc">
 
-<div class="wrap">
+<div class="toc-nowbar" id="tocNowbar">I was here.</div>
+<div class="layout">
+  <aside class="toc-rail" aria-label="Contents">
+    <p class="railhead">Contents</p>
+    <input class="toc-filter" id="tocFilterRail" placeholder="Filter sections…">
+    <div class="toc-list" id="tocRailList">
+      
+      <div class="toc-grp open">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">I was here.</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#i-was-here" data-target="i-was-here" class="active">I was here.</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">National Service comes to Australia</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#national-service-comes-to-australia" data-target="national-service-comes-to-australia">National Service comes to Australia</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Navy – my preference</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#navy-my-preference" data-target="navy-my-preference">Navy – my preference</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">THE FIRST FOUR MONTHS - 1953</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-first-four-months-1953" data-target="the-first-four-months-1953">THE FIRST FOUR MONTHS - 1953</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">I front up</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#i-front-up" data-target="i-front-up">I front up</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">HMAS Leeuwin</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#hmas-leeuwin" data-target="hmas-leeuwin">HMAS Leeuwin</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Day 1 – the uniform</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#day-1-the-uniform" data-target="day-1-the-uniform">Day 1 – the uniform</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The hammock</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-hammock" data-target="the-hammock">The hammock</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Pay day</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#pay-day" data-target="pay-day">Pay day</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The ‘voice’</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-voice" data-target="the-voice">The ‘voice’</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Recruit ‘Stoker’ Skitch</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#recruit-stoker-skitch" data-target="recruit-stoker-skitch">Recruit ‘Stoker’ Skitch</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Hodge – Lieutenant Commander RAN</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#hodge-lieutenant-commander-ran" data-target="hodge-lieutenant-commander-ran">Hodge – Lieutenant Commander RAN</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Piping</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#piping" data-target="piping">Piping</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Training starts – drill</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#training-starts-drill" data-target="training-starts-drill">Training starts – drill</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Ranks</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#ranks" data-target="ranks">Ranks</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The medical</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-medical" data-target="the-medical">The medical</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">And sex</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#and-sex" data-target="and-sex">And sex</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Our training broadens</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#our-training-broadens" data-target="our-training-broadens">Our training broadens</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Damage control</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#damage-control" data-target="damage-control">Damage control</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Stoking</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#stoking" data-target="stoking">Stoking</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Leave at last</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#leave-at-last" data-target="leave-at-last">Leave at last</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">A lecture from Hodge</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#a-lecture-from-hodge" data-target="a-lecture-from-hodge">A lecture from Hodge</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Naval lingo</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#naval-lingo" data-target="naval-lingo">Naval lingo</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Who might sail?</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#who-might-sail" data-target="who-might-sail">Who might sail?</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">A sporting life</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#a-sporting-life" data-target="a-sporting-life">A sporting life</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">SEA GOING AT LAST</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#sea-going-at-last" data-target="sea-going-at-last">SEA GOING AT LAST</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Corvettes</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#corvettes" data-target="corvettes">Corvettes</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Day one aboard</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#day-one-aboard" data-target="day-one-aboard">Day one aboard</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Bells and Watches</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#bells-and-watches" data-target="bells-and-watches">Bells and Watches</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The boiler room</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-boiler-room" data-target="the-boiler-room">The boiler room</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The engine room</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-engine-room" data-target="the-engine-room">The engine room</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Underway</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#underway" data-target="underway">Underway</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Inspections</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#inspections" data-target="inspections">Inspections</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Sea Sickness</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#sea-sickness" data-target="sea-sickness">Sea Sickness</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">A Ship of War</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#a-ship-of-war" data-target="a-ship-of-war">A Ship of War</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Ship-board activities</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#ship-board-activities" data-target="ship-board-activities">Ship-board activities</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Our voyages</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#our-voyages" data-target="our-voyages">Our voyages</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Our Sister Ship HMAS Mildura</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#our-sister-ship-hmas-mildura" data-target="our-sister-ship-hmas-mildura">Our Sister Ship HMAS Mildura</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Other ships</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#other-ships" data-target="other-ships">Other ships</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Stokers allowed being Seamen</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#stokers-allowed-being-seamen" data-target="stokers-allowed-being-seamen">Stokers allowed being Seamen</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Coral Sea Week</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#coral-sea-week" data-target="coral-sea-week">Coral Sea Week</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">And we come to an end</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#and-we-come-to-an-end" data-target="and-we-come-to-an-end">And we come to an end</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">THE SECOND PERIOD - 1954</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-second-period-1954" data-target="the-second-period-1954">THE SECOND PERIOD - 1954</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">South to Bunbury</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#south-to-bunbury" data-target="south-to-bunbury">South to Bunbury</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">North to Geraldton – and a broken voice</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#north-to-geraldton-and-a-broken-voice" data-target="north-to-geraldton-and-a-broken-voice">North to Geraldton – and a broken voice</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Mates</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#mates" data-target="mates">Mates</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Back to Leeuwin</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#back-to-leeuwin" data-target="back-to-leeuwin">Back to Leeuwin</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Through the fence</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#through-the-fence" data-target="through-the-fence">Through the fence</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Naval justice</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#naval-justice" data-target="naval-justice">Naval justice</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">It comes to an end</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#it-comes-to-an-end" data-target="it-comes-to-an-end">It comes to an end</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 1</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-1" data-target="plate-1">PLATE 1</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 2</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-2" data-target="plate-2">PLATE 2</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 3</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-3" data-target="plate-3">PLATE 3</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Warburton.</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#warburton" data-target="warburton">Warburton.</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 4</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-4" data-target="plate-4">PLATE 4</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Fremantle Harbour.</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#fremantle-harbour" data-target="fremantle-harbour">Fremantle Harbour.</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 5</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-5" data-target="plate-5">PLATE 5</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 6</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-6" data-target="plate-6">PLATE 6</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">ON DIRK HARTOG’S ISLAND</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#on-dirk-hartogs-island" data-target="on-dirk-hartogs-island">ON DIRK HARTOG’S ISLAND</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The lighthouse</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-lighthouse" data-target="the-lighthouse">The lighthouse</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The Inscription</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-inscription" data-target="the-inscription">The Inscription</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The coastline</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-coastline" data-target="the-coastline">The coastline</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Notes</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#notes" data-target="notes">Notes</a>
+          
+        </div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="article">
 
 
   <header class="masthead">
@@ -314,11 +1202,7 @@
       
     
       
-        <p class="lead"><br></p>
-      
-    
-      
-        <h2 id="australian-navy-1953-1954"><span style="font-size: 1.6rem;">I was here.</span></h2>
+        <h2 id="i-was-here">I was not here today.</h2>
       
     
       
@@ -326,7 +1210,7 @@
       
     
       
-        <p>National Service descended on Australian male youth in 1951. The federal government of the day was led by Prime Minister Robert Gordon Menzies in coalition with the Country Party representing rural interests. The Liberal Party of Robert Menzies was a relatively new political entity having risen from the ashes of past conservative political parties in 1944. For “Liberal” one should read “Conservative” because that is what it was. Menzies had succeeded in making communism the ever present national threat, attempting unsuccessfully by referendum in 1951 to ban the Communist Party of Australia. In 1950 communist North Korea invaded non-communist South Korea and Australia joined in a conglomerate United Nations force to repel the invaders in a four year long bloody campaign that finally resulted in stalemate that has persisted ever since. The font of communism at that time was the United Soviet Socialist Republic, the USSR (Russia) and communist world domination was seen to be their principal objective. It was this apparently expansionist nature of the USSR that gave rise to the “cold war”, a non-shooting war epitomised by the “arms race”. Each side, the USSR and its eastern European allies and the western nations led by the USA developed bigger, better and more sophisticated weaponry including nuclear. The Labor Party was portrayed by the Liberals as being “soft on communism”, partly because the Labor Party led the campaign against the banning of the Communist Party in the 1951 referendum. Within Australia many of the powerful trade unions that supported the Labor Party were led by card carrying Communists who seemed intent on fomenting industrial trouble not in the national interest. At least that is the way the Menzies Liberal/Country party coalition government saw it and presented it to the public, particularly at election time – kicking the “communist can” it was called. Australia was still in a state of post-war euphoria with jobs for all who sought them, housing affordable to most and for those who needed them, low rental state housing. That was the state of the nation in the early 1950s and it is against that background that National Service was introduced in 1951. National Service was the federal government response to the “cold war threat”. Every male citizen on reaching the age of 18 was to be military trained in one of the three services, Navy, Army or Air Force. At the age of 17 ½ years males were required to register with the Department of Labour and National Service stating their vital statistics, contact details and their service preference with reasons. Remember; this was the era long before computers and the system was based largely on 17 year olds willingly presenting themselves for registration. There were of course penalties for non-registration and the long arm of the law seemed to catch up with those who failed to register. To be a conscientious objector, a conchie” was tantamount to being a communist. National Service comprised six months military training and only those accepted for the RAAF did a straight six months full time training. A limited few actually learnt to fly an aircraft. National Service in the Royal Australian Navy was for an initial four months and then two weeks a year for the succeeding four years. (It may have been four weeks in each of the following two years.) Naval National Service included sea-going training for about half the time. Both the Navy and Air Force intakes were aptitude based limited to the numbers each of those services could accommodate and adequately train. The rest were allocated to the Army where initial full time training was for three months and then three week a year in a Citizens Military Force (CMF) unit for each of four years. In each of the three services the first three months training was roughly equivalent to recruit training in the regular service. Following completion of the National Service commitment the fully trained sailor, soldier or airman was held against the inactive reserve for a period of years simply requiring that the person advise annually current address, a requirement honoured more in the breach than observance. National Servicemen were commonly called “Nashos”, in early days a term of derision applied by the “regulars” but becoming a term of affection in the public at large with the passing of years.</p>
+        <p class="lead">National Service descended on Australian male youth in 1951. The federal government of the day was led by Prime Minister Robert Gordon Menzies in coalition with the Country Party representing rural interests. The Liberal Party of Robert Menzies was a relatively new political entity having risen from the ashes of past conservative political parties in 1944. For “Liberal” one should read “Conservative” because that is what it was. Menzies had succeeded in making communism the ever present national threat, attempting unsuccessfully by referendum in 1951 to ban the Communist Party of Australia. In 1950 communist North Korea invaded non-communist South Korea and Australia joined in a conglomerate United Nations force to repel the invaders in a four year long bloody campaign that finally resulted in stalemate that has persisted ever since. The font of communism at that time was the United Soviet Socialist Republic, the USSR (Russia) and communist world domination was seen to be their principal objective. It was this apparently expansionist nature of the USSR that gave rise to the “cold war”, a non-shooting war epitomised by the “arms race”. Each side, the USSR and its eastern European allies and the western nations led by the USA developed bigger, better and more sophisticated weaponry including nuclear. The Labor Party was portrayed by the Liberals as being “soft on communism”, partly because the Labor Party led the campaign against the banning of the Communist Party in the 1951 referendum. Within Australia many of the powerful trade unions that supported the Labor Party were led by card carrying Communists who seemed intent on fomenting industrial trouble not in the national interest. At least that is the way the Menzies Liberal/Country party coalition government saw it and presented it to the public, particularly at election time – kicking the “communist can” it was called. Australia was still in a state of post-war euphoria with jobs for all who sought them, housing affordable to most and for those who needed them, low rental state housing. That was the state of the nation in the early 1950s and it is against that background that National Service was introduced in 1951. National Service was the federal government response to the “cold war threat”. Every male citizen on reaching the age of 18 was to be military trained in one of the three services, Navy, Army or Air Force. At the age of 17 ½ years males were required to register with the Department of Labour and National Service stating their vital statistics, contact details and their service preference with reasons. Remember; this was the era long before computers and the system was based largely on 17 year olds willingly presenting themselves for registration. There were of course penalties for non-registration and the long arm of the law seemed to catch up with those who failed to register. To be a conscientious objector, a conchie” was tantamount to being a communist. National Service comprised six months military training and only those accepted for the RAAF did a straight six months full time training. A limited few actually learnt to fly an aircraft. National Service in the Royal Australian Navy was for an initial four months and then two weeks a year for the succeeding four years. (It may have been four weeks in each of the following two years.) Naval National Service included sea-going training for about half the time. Both the Navy and Air Force intakes were aptitude based limited to the numbers each of those services could accommodate and adequately train. The rest were allocated to the Army where initial full time training was for three months and then three week a year in a Citizens Military Force (CMF) unit for each of four years. In each of the three services the first three months training was roughly equivalent to recruit training in the regular service. Following completion of the National Service commitment the fully trained sailor, soldier or airman was held against the inactive reserve for a period of years simply requiring that the person advise annually current address, a requirement honoured more in the breach than observance. National Servicemen were commonly called “Nashos”, in early days a term of derision applied by the “regulars” but becoming a term of affection in the public at large with the passing of years.</p>
       
     
       
@@ -374,7 +1258,7 @@
       
     
       
-        <p>On day one we must have been told how to assemble a navy hammock because that is what we were to sleep in that night and for the next four months. In two squads of twenty five we were taken by our escort, a Leading Seaman, who we were to come to know very well in the ensuing four months (whose name I have unfortunately forgotten so I will call him Leading Seaman Burstow), to the two huts at the top end of the establishment where we were confronted by a very empty space, no beds! Down one side was a row of lockers in which we were to stow our uniforms and personal gear. Across the hut at a height of about six feet were a number of steel horizontal bars about ten feet apart from one side of the hut to the other. Each bar had welded hooks spaced at about six feet along its length, probably four or five to a bar. It was from these hooks that we were to sling our hammocks. The naval hammock comprises a rectangle of heavy canvas 6 ½ feet in length and about three feet in width with  a dozen or so reinforced eyelets at either end. Two bunches of thick cords fastened together at one end with a ring, maybe twelve cords in each bunch were issued with each hammock. Laying the hammock on the deck (any floor is a “deck” in the navy) the loose end of each cord in a bunch is tied with a simple reef knot (a granny knot will do) into each of the twelve eyelets of the hammock. The ring now at each end of the hammock is hooked over two opposite hooks on two adjacent parallel bars and ‘hey presto’ there is your slung hammock. Of course, it didn’t always work out all that well. Some hammocks finished up tightly stretched between hooks and others were almost touching the ground in the middle. Others were tight on one side and loose on the opposite. Many adjustments had to be made to the ties at either end. Also issued was a narrow mattress, sheets and blanket. Getting used to sleeping in a hammock took some time; somewhat like sleeping in a cocoon. Even getting into the hammock without crashing to the deck was something of a test. Nevertheless, we all managed to do so eventually.</p>
+        <p>On day one we must have been told how to assemble a navy hammock because that is what we were to sleep in that night and for the next four months. In two squads of twenty five we were taken by our escort, a Leading Seaman, who we were to come to know very well in the ensuing four months (whose name I have unfortunately forgotten so I will call him Leading Seaman Burstow), to the two huts at the top end of the establishment where we were confronted by a very empty space, no beds! Down one side was a row of lockers in which we were to stow our uniforms and personal gear. Across the hut at a height of about six feet were a number of steel horizontal bars about ten feet apart from one side of the hut to the other. Each bar had welded hooks spaced at about six feet along its length, probably four or five to a bar. It was from these hooks that we were to sling our hammocks. The naval hammock comprises a rectangle of heavy canvas 6 ½ feet in length and about three feet in width with a dozen or so reinforced eyelets at either end. Two bunches of thick cords fastened together at one end with a ring, maybe twelve cords in each bunch were issued with each hammock. Laying the hammock on the deck (any floor is a “deck” in the navy) the loose end of each cord in a bunch is tied with a simple reef knot (a granny knot will do) into each of the twelve eyelets of the hammock. The ring now at each end of the hammock is hooked over two opposite hooks on two adjacent parallel bars and ‘hey presto’ there is your slung hammock. Of course, it didn’t always work out all that well. Some hammocks finished up tightly stretched between hooks and others were almost touching the ground in the middle. Others were tight on one side and loose on the opposite. Many adjustments had to be made to the ties at either end. Also issued was a narrow mattress, sheets and blanket. Getting used to sleeping in a hammock took some time; somewhat like sleeping in a cocoon. Even getting into the hammock without crashing to the deck was something of a test. Nevertheless, we all managed to do so eventually.</p>
       
     
       
@@ -406,7 +1290,7 @@
       
     
       
-        <p>On day two our training started in earnest.  That day, and each day after that started with “divisions” and prayers. This took place on the quarter deck (drill hall). On day two we had not had any drill instruction so we entered the quarterdeck very informally – as a rabble – we might have been told. The “Master at Arms” took the parade. We shuffled into rows facing one end of the “quarterdeck” facing a slightly raised dais which might have been called the “bridge” – I am not sure that it was. At a certain point Lieutenant Commander Hodge appeared dressed in his white starched shorts, white short sleeved shirt with his gold braided rank insignia on his shoulders (two and a half “rings”), white knee-length stockings and white shoes, with small pink knees showing between the bottom of his shorts and the top of his white hose. He fixed us all with his truly steely gaze. Then followed a format that we came to know very well. Of course we would have all been brought to “attention” had we known how to do that and no doubt stood at ease, maybe stood easy even while Lieutenant Commander Hodge addressed us. I do not recall what he said on that first morning but I do recall that he introduced us in no uncertain terms to the Navy’s discipline code – “the Articles of War” – which he said would be read to us one by one each morning. It was frightening stuff; each article – a statement of an offence such as “disobeying a command” or “cowardice in the face of an enemy” was followed by a penalty, in the latter instance DEATH which Hodge seemed to spit out with relish. In fact quite a large number of offences seemed to carry that rather extreme penalty. Imprisonment was frequent and the only one missing was “flogging”. Following this, naval prayers were said and an appropriate hymn sung. Perhaps we were given a hymn sheet since we seemed to be able to sing with some gusto.</p>
+        <p>On day two our training started in earnest. That day, and each day after that started with “divisions” and prayers. This took place on the quarter deck (drill hall). On day two we had not had any drill instruction so we entered the quarterdeck very informally – as a rabble – we might have been told. The “Master at Arms” took the parade. We shuffled into rows facing one end of the “quarterdeck” facing a slightly raised dais which might have been called the “bridge” – I am not sure that it was. At a certain point Lieutenant Commander Hodge appeared dressed in his white starched shorts, white short sleeved shirt with his gold braided rank insignia on his shoulders (two and a half “rings”), white knee-length stockings and white shoes, with small pink knees showing between the bottom of his shorts and the top of his white hose. He fixed us all with his truly steely gaze. Then followed a format that we came to know very well. Of course we would have all been brought to “attention” had we known how to do that and no doubt stood at ease, maybe stood easy even while Lieutenant Commander Hodge addressed us. I do not recall what he said on that first morning but I do recall that he introduced us in no uncertain terms to the Navy’s discipline code – “the Articles of War” – which he said would be read to us one by one each morning. It was frightening stuff; each article – a statement of an offence such as “disobeying a command” or “cowardice in the face of an enemy” was followed by a penalty, in the latter instance DEATH which Hodge seemed to spit out with relish. In fact quite a large number of offences seemed to carry that rather extreme penalty. Imprisonment was frequent and the only one missing was “flogging”. Following this, naval prayers were said and an appropriate hymn sung. Perhaps we were given a hymn sheet since we seemed to be able to sing with some gusto.</p>
       
     
       
@@ -490,7 +1374,7 @@
       
     
       
-        <p>We saw a good deal of Lieutenant Commander Hodge apart from morning divisions. He often came into our class room periods and stood at the back of the room with his penetrating eyes fixed on the hapless lecturer giving the lesson. It must have been very off-putting for the lecturer and a bit stultifying for the class who when asked if there were any questions tended to remain in stunned silence. Hodge might well shatter the silence with a “Cmon! Someone must have a question”, said in a somewhat acerbic voice. On one occasion when the good Hodge took a lesson – very stilted delivery – one of our number (Randy I recall) fell asleep. Hodge suddenly stopped and almost roared pointing with his finger – “is that man asleep”? Indeed he was and to wake him up he was ordered outside to double around the parade ground for the rest of the lesson. Some years later Lieutenant Commander Hodge’s name came up in discussion with some of my more senior army colleagues relating to the Woomera Rocket Range project. I commented that the same gentleman had been the Officer Commanding the HMAS Leeuwin during my national service training. “Oh – that was Bunny Hodge; a really lovely fellow”.  So – clearly there were two sides to Lieutenant Commander Hodge and it was only at my point of discharge from the Navy to join the Army that I personally experienced that second side.</p>
+        <p>We saw a good deal of Lieutenant Commander Hodge apart from morning divisions. He often came into our class room periods and stood at the back of the room with his penetrating eyes fixed on the hapless lecturer giving the lesson. It must have been very off-putting for the lecturer and a bit stultifying for the class who when asked if there were any questions tended to remain in stunned silence. Hodge might well shatter the silence with a “Cmon! Someone must have a question”, said in a somewhat acerbic voice. On one occasion when the good Hodge took a lesson – very stilted delivery – one of our number (Randy I recall) fell asleep. Hodge suddenly stopped and almost roared pointing with his finger – “is that man asleep”? Indeed he was and to wake him up he was ordered outside to double around the parade ground for the rest of the lesson. Some years later Lieutenant Commander Hodge’s name came up in discussion with some of my more senior army colleagues relating to the Woomera Rocket Range project. I commented that the same gentleman had been the Officer Commanding the HMAS Leeuwin during my national service training. “Oh – that was Bunny Hodge; a really lovely fellow”. So – clearly there were two sides to Lieutenant Commander Hodge and it was only at my point of discharge from the Navy to join the Army that I personally experienced that second side.</p>
       
     
       
@@ -614,7 +1498,7 @@
       
     
       
-        <p>At some point of the day we ate our lunches and finally drifted back to the embarking point to return to our respective Corvettes in the late afternoon. I think we all enjoyed our sojourn on the island and were not too disappointed at not having shore leave in Carnarvon.  The crew had made good use of their fishing time, some from the ship’s side and others taking the cutter out some distance from the Fremantle. The fish caught were pink snapper – by the dozens; the quarterdeck was alive with snapper. They were being gutted, washed and stowed in the ship’s freezer, not for onboard consumption but bound (I think) for the Fremantle fish market. We may have had a fish dinner that night. The ‘Batavia’ incident. It was on the voyage back to Fremantle that our sister ship the Mildura undertook an interesting mission. We hove to in a calm water area near the Abrolhos Islands some forty miles off-shore from Geraldton. From the Fremantle we could see a good deal of activity on the quarterdeck of the Mildura and finally the cutter was lowered into the water with one of the whalers in tow. They were engaged for a few hours on the western side of one of the low lying islands out of sight of the Fremantle returning to the Mildura just before sunset. Again there was a lot of activity on the Mildura’s quarterdeck. The cutter and the whaler were hoisted back into their divots but there was more to it than that and it wasn’t until we reached Fremantle the next day that we learned what it was all about. The Mildura had set out with a special mission, that being to raise the ship’s cannon of the Dutch trading ship Batavia that was wrecked on the outer reef in the year 1629. Thereon rests a most gruesome tale of murder, rape and mayhem that is not part of this account. The Mildura was successful in the venture and the cannon now resides in the Fremantle Maritime Museum.  Just how the cannon was brought to the surface and into the whaler I have no idea but I was told that the operation stoved in the thwarts of the whaler which no doubt was not appreciated by the Navy. We weighed anchor and departed for Fremantle again. I suspect that I was not looking forward to the voyage back but the sea had calmed and the previous head sea was now a much flatter tail sea. We Nashos were not required to observe watches until the following morning. While most of our sea going training took place in the proclaimed area off Garden Island we undertook another voyage to Busselton 300 kilometres south of Fremantle in the company of our sister ship the Mildura. This time the seas were kind to us and it was a pleasant journey in day light hours. Our Corvette anchored in the harbour some distance from the end of Busselton’s very long jetty. We did very little that I can recall. Captain Vance may have gone ashore with the Jimmy in the motorized cutter for some official reason and in the afternoon the whaler was lowered and with one or two crew and a few of the Nasho seamen rigged the sail and sailed around the harbour. The whaler is sharp at both ends and only the presence of a rudder identifies the stern. The sails were of heavy grey canvas and the mainsail is not reefed to a boom and is controlled by a sheet (rope) only through a double block. It is designed for rowing with three rowlocks down each gunwale. I was disappointed at not having the opportunity to sail – we stoker were not “seamen” enough to be invited. Word had got around that we would round Cape Leeuwin and head for Albany but finally the next day w set sail north again to Bunbury. This time our Corvette tied up near the end of the long Bunbury jetty in the late evening. We Nashos were allowed ashore the following day and headed for the surf on the back beach – in our uniforms I recall. Nevertheless, some of us changed and ventured into the surf. I had not been to Bunbury since my very young years in Collie and found some pleasure in exploring the town with a couple of my Nasho friends. In the late afternoon we were back on board and the following morning steamed out of the harbour and headed north again to Fremantle. I seemed to be assigned to engine room duties throughout that voyage and I think it was only on the odd occasion that I served a watch in the boiler room.</p>
+        <p>At some point of the day we ate our lunches and finally drifted back to the embarking point to return to our respective Corvettes in the late afternoon. I think we all enjoyed our sojourn on the island and were not too disappointed at not having shore leave in Carnarvon. The crew had made good use of their fishing time, some from the ship’s side and others taking the cutter out some distance from the Fremantle. The fish caught were pink snapper – by the dozens; the quarterdeck was alive with snapper. They were being gutted, washed and stowed in the ship’s freezer, not for onboard consumption but bound (I think) for the Fremantle fish market. We may have had a fish dinner that night. The ‘Batavia’ incident. It was on the voyage back to Fremantle that our sister ship the Mildura undertook an interesting mission. We hove to in a calm water area near the Abrolhos Islands some forty miles off-shore from Geraldton. From the Fremantle we could see a good deal of activity on the quarterdeck of the Mildura and finally the cutter was lowered into the water with one of the whalers in tow. They were engaged for a few hours on the western side of one of the low lying islands out of sight of the Fremantle returning to the Mildura just before sunset. Again there was a lot of activity on the Mildura’s quarterdeck. The cutter and the whaler were hoisted back into their divots but there was more to it than that and it wasn’t until we reached Fremantle the next day that we learned what it was all about. The Mildura had set out with a special mission, that being to raise the ship’s cannon of the Dutch trading ship Batavia that was wrecked on the outer reef in the year 1629. Thereon rests a most gruesome tale of murder, rape and mayhem that is not part of this account. The Mildura was successful in the venture and the cannon now resides in the Fremantle Maritime Museum. Just how the cannon was brought to the surface and into the whaler I have no idea but I was told that the operation stoved in the thwarts of the whaler which no doubt was not appreciated by the Navy. We weighed anchor and departed for Fremantle again. I suspect that I was not looking forward to the voyage back but the sea had calmed and the previous head sea was now a much flatter tail sea. We Nashos were not required to observe watches until the following morning. While most of our sea going training took place in the proclaimed area off Garden Island we undertook another voyage to Busselton 300 kilometres south of Fremantle in the company of our sister ship the Mildura. This time the seas were kind to us and it was a pleasant journey in day light hours. Our Corvette anchored in the harbour some distance from the end of Busselton’s very long jetty. We did very little that I can recall. Captain Vance may have gone ashore with the Jimmy in the motorized cutter for some official reason and in the afternoon the whaler was lowered and with one or two crew and a few of the Nasho seamen rigged the sail and sailed around the harbour. The whaler is sharp at both ends and only the presence of a rudder identifies the stern. The sails were of heavy grey canvas and the mainsail is not reefed to a boom and is controlled by a sheet (rope) only through a double block. It is designed for rowing with three rowlocks down each gunwale. I was disappointed at not having the opportunity to sail – we stoker were not “seamen” enough to be invited. Word had got around that we would round Cape Leeuwin and head for Albany but finally the next day w set sail north again to Bunbury. This time our Corvette tied up near the end of the long Bunbury jetty in the late evening. We Nashos were allowed ashore the following day and headed for the surf on the back beach – in our uniforms I recall. Nevertheless, some of us changed and ventured into the surf. I had not been to Bunbury since my very young years in Collie and found some pleasure in exploring the town with a couple of my Nasho friends. In the late afternoon we were back on board and the following morning steamed out of the harbour and headed north again to Fremantle. I seemed to be assigned to engine room duties throughout that voyage and I think it was only on the odd occasion that I served a watch in the boiler room.</p>
       
     
       
@@ -674,7 +1558,7 @@
       
     
       
-        <p>This took place in 1954 and I must confess to some difficulty in separating the events of 1953 from those of 1954. During the intervening period the Government had reduced the second national service commitment from two months to six weeks and a year later I think it was reduced even further. At the time of my first call-up we were to have completed the prescribed six months in two of three week bites per year for the following three years and consolidating that into a single six week period seemed to be good sense. Of course we continued a commitment in the Naval Reserve for at least three years during which time we could be called into full time service at short notice. As I recall it the second period of full time training was mainly ship based, on the HMAS Fremantle. I think we probably spent a week at Leeuwin initially doing some refresher training but I recall it being a fairly relaxed time. Lieutenant Commander Hodge was still the Commanding Officer and our morning divisions were a more relaxed event. Our instructor was this time a petty officer whom we knew in a very different role on the initial recruit training. Then he had a more disciplinary role and this time he seemed much more human. I have long forgotten his name so I will give him one – Smith will do, Petty Officer Smith! He was a seaman and from him I learnt some more seamanship skills. We had the occasional lecture on stoker matters from a very aged petty officer stoker. All went very comfortably – we were no longer recruits. Of course with only one minesweeper now available, the HMAS Mildura had long left for decommissioning in the eastern states there could be only twenty five of us this time and I was pleased to find that they seemed to be all the fellows I got on with quite well on the previous time. In the second week we boarded the Fremantle and even the “Jimmy” seemed to have lost his acerbity and welcomed us aboard in a friendly manner with the skipper, Captain Rance looking down in a fatherly fashion. It all looked very promising and that was the way it turned out to be. In the short time we had on board the Fremantle we exercised in Gage Roads and beyond Rottnest Island and did two trips, the first south to Bunbury and the second north to Geraldton. In both instances the weather was kind, little more than low swells that the Corvette handled easily. Again I watched my diet and my watch schedule was largely confined to the engine room, but also some seaman duties, on the bridge occasionally; on one occasion coming into Fremantle Harbour – as a lookout probably. Nevertheless it was fascinating to see the procedure for berthing. I recall a comment from an officer of the  cargo ship along side of which we were tying up, to the effect “grab a look of the mob they have on the bridge” and a response “ah they are just trainees”.</p>
+        <p>This took place in 1954 and I must confess to some difficulty in separating the events of 1953 from those of 1954. During the intervening period the Government had reduced the second national service commitment from two months to six weeks and a year later I think it was reduced even further. At the time of my first call-up we were to have completed the prescribed six months in two of three week bites per year for the following three years and consolidating that into a single six week period seemed to be good sense. Of course we continued a commitment in the Naval Reserve for at least three years during which time we could be called into full time service at short notice. As I recall it the second period of full time training was mainly ship based, on the HMAS Fremantle. I think we probably spent a week at Leeuwin initially doing some refresher training but I recall it being a fairly relaxed time. Lieutenant Commander Hodge was still the Commanding Officer and our morning divisions were a more relaxed event. Our instructor was this time a petty officer whom we knew in a very different role on the initial recruit training. Then he had a more disciplinary role and this time he seemed much more human. I have long forgotten his name so I will give him one – Smith will do, Petty Officer Smith! He was a seaman and from him I learnt some more seamanship skills. We had the occasional lecture on stoker matters from a very aged petty officer stoker. All went very comfortably – we were no longer recruits. Of course with only one minesweeper now available, the HMAS Mildura had long left for decommissioning in the eastern states there could be only twenty five of us this time and I was pleased to find that they seemed to be all the fellows I got on with quite well on the previous time. In the second week we boarded the Fremantle and even the “Jimmy” seemed to have lost his acerbity and welcomed us aboard in a friendly manner with the skipper, Captain Rance looking down in a fatherly fashion. It all looked very promising and that was the way it turned out to be. In the short time we had on board the Fremantle we exercised in Gage Roads and beyond Rottnest Island and did two trips, the first south to Bunbury and the second north to Geraldton. In both instances the weather was kind, little more than low swells that the Corvette handled easily. Again I watched my diet and my watch schedule was largely confined to the engine room, but also some seaman duties, on the bridge occasionally; on one occasion coming into Fremantle Harbour – as a lookout probably. Nevertheless it was fascinating to see the procedure for berthing. I recall a comment from an officer of the cargo ship along side of which we were tying up, to the effect “grab a look of the mob they have on the bridge” and a response “ah they are just trainees”.</p>
       
     
       
@@ -690,7 +1574,7 @@
       
     
       
-        <p>The voyage was easy and I do not recall problems with sea sickness – I had it under control. We left Fremantle in the very early morning and arrived at Geraldton in the evening and anchored in the outer harbour. The following morning with anchor’s aweigh we steamed into a harbour tying up at the wharf. We were surrounded by fishing boats off-loading their catch of Dongara Crays. Dongara is a small community south of Geraldton and the crays (small lobsters) are a major industry. Geraldton was (and is) also a wheat exporting port. Soon after docking we Nashos were granted shore leave, an occasion that proved to be a significant one for me. I do not recall very much of the day other than we wandered about the very interesting old town, more or less filling in time. At some point of the late afternoon we found ourselves breasting the bar of a pub that didn’t seem to mind that we were Nashos and of course we assured them that we were all twenty one. I had a lot to learn on holding one’s liquor. I think the only time I had had a single glass of beer might have been when with a small group of Nashos I was invited to the married quarter of Leading Seaman Burstow at the end of our first training period. So…. I breasted the bar and socked back more than a few schooners and I seem to recall taking bottles to a park with fish and chips and continuing on and then suddenly being hit with the urgent need to chunder. And I chundered and chundered and I even recall a couple of my mates holding me up – and out and still I chundered to the point where my voice became a croak. Somehow we got back to the ship and into my hammock, or maybe some concealed corner of the foredeck. The next day was a “make and mend day” and we stayed on board doing small chores and during that time I recovered. My voice continued to croak and by the time we got back to Fremantle my voice had broken. I think it might have been on that occasion that we “weighed anchor” manually. The Jimmy undertook this little operation and with a few of the crew rigged up a block and tackle hooked in to the massive anchor chain at water level leaving a long lead rope down one side of the deck below the bridge. Twenty or so off duty Nashos (I was one) were then arraigned along the lead rope (as for a tug of war) and on the order ‘pick up rope’  we did and then on the order ’pull’ we pulled – and pulled and pulled. Eventually we could feel the anchor free from the bottom and lift. Of course it could only lift the distance from water level to the edge of the deck, then it had to be locked and the tackle played out to water level again and the process repeated – and repeated – several times until the Jimmy, peering over the ships side called our ‘Anchor’s aweigh’ at which point the call was repeated by Captain Rance observing the procedure from the side of the bridge and the ship started moving forward slowly. Soon we were under way, back to Fremantle.</p>
+        <p>The voyage was easy and I do not recall problems with sea sickness – I had it under control. We left Fremantle in the very early morning and arrived at Geraldton in the evening and anchored in the outer harbour. The following morning with anchor’s aweigh we steamed into a harbour tying up at the wharf. We were surrounded by fishing boats off-loading their catch of Dongara Crays. Dongara is a small community south of Geraldton and the crays (small lobsters) are a major industry. Geraldton was (and is) also a wheat exporting port. Soon after docking we Nashos were granted shore leave, an occasion that proved to be a significant one for me. I do not recall very much of the day other than we wandered about the very interesting old town, more or less filling in time. At some point of the late afternoon we found ourselves breasting the bar of a pub that didn’t seem to mind that we were Nashos and of course we assured them that we were all twenty one. I had a lot to learn on holding one’s liquor. I think the only time I had had a single glass of beer might have been when with a small group of Nashos I was invited to the married quarter of Leading Seaman Burstow at the end of our first training period. So…. I breasted the bar and socked back more than a few schooners and I seem to recall taking bottles to a park with fish and chips and continuing on and then suddenly being hit with the urgent need to chunder. And I chundered and chundered and I even recall a couple of my mates holding me up – and out and still I chundered to the point where my voice became a croak. Somehow we got back to the ship and into my hammock, or maybe some concealed corner of the foredeck. The next day was a “make and mend day” and we stayed on board doing small chores and during that time I recovered. My voice continued to croak and by the time we got back to Fremantle my voice had broken. I think it might have been on that occasion that we “weighed anchor” manually. The Jimmy undertook this little operation and with a few of the crew rigged up a block and tackle hooked in to the massive anchor chain at water level leaving a long lead rope down one side of the deck below the bridge. Twenty or so off duty Nashos (I was one) were then arraigned along the lead rope (as for a tug of war) and on the order ‘pick up rope’ we did and then on the order ’pull’ we pulled – and pulled and pulled. Eventually we could feel the anchor free from the bottom and lift. Of course it could only lift the distance from water level to the edge of the deck, then it had to be locked and the tackle played out to water level again and the process repeated – and repeated – several times until the Jimmy, peering over the ships side called our ‘Anchor’s aweigh’ at which point the call was repeated by Captain Rance observing the procedure from the side of the bridge and the ship started moving forward slowly. Soon we were under way, back to Fremantle.</p>
       
     
       
@@ -714,7 +1598,7 @@
       
     
       
-        <p>The previously mentioned high chain wire fence had a number of escape holes in it which even if the higher command of the base knew about the holes they remained open. Most were concealed from view by assorted low shrubs, however, we nashos knew where they were and occasionally one or two would use them at night for a few hours unofficial leave (“adrift” in naval lingo) making sure that they were well and truly back and snuggled up in their hammock before the “wakey wakey hit the deck” call soon after first light. To my knowledge no one was ever caught out. With that in mind I made my own escape on a Saturday night to attend the wedding reception of Peter Tournay, a work colleague with whom I usually traveled to work each day. Although not a formal invitation he had suggested I might attend the reception if I could get a leave pass from Leeuwin. For some reason Leeuwin was a closed camp that weekend perhaps because we had only a couple of weeks to go to complete our national service obligation. In an act of bravado (for me) I decided to use the hole in the fence to attend the wedding reception (the service was not possible because my escape would have been in broad daylight – far too risky) and in my best number one uniform just after dark I made my escape. It probably took me an hour or two to reach the reception in Victoria Park, having to walk briskly from the street at the back of Leeuwin to the nearest bus stop and then a bus into Fremantle, another to Perth and another to Victoria Park and the reception location. I made it, to the surprise of many at the reception who were mostly work colleagues and of course in naval uniform I was fairly obvious. Arriving just after dinner I was welcomed by Peter and his new wife and stayed during the dancing that followed dinner, the throwing of the garter and the line up of guests farewelling the married couple on their honeymoon departure. I left soon after and made my way back to Leeuwin and the hole in the fence. Although I was able to get the bus from Perth to Fremantle the shorter bus run from Fremantle to the vicinity of Leeuwin  ceased at midnight and I had a longish walk from the traffic bridge back to the street behind the base (a street full of navy married quarters) and finally the hole in the fence. I quickly folded my number one uniform and poked it back into my locker. My hammock had been slung for me by my mates and stuffed with pillows and an extra mattress to make it look occupied. I removed these, stowed them away in the hammock bin and climbed into my hammock and slept fitfully till dawn and the call to hit the deck. I had got away with my one and only escape escapade.</p>
+        <p>The previously mentioned high chain wire fence had a number of escape holes in it which even if the higher command of the base knew about the holes they remained open. Most were concealed from view by assorted low shrubs, however, we nashos knew where they were and occasionally one or two would use them at night for a few hours unofficial leave (“adrift” in naval lingo) making sure that they were well and truly back and snuggled up in their hammock before the “wakey wakey hit the deck” call soon after first light. To my knowledge no one was ever caught out. With that in mind I made my own escape on a Saturday night to attend the wedding reception of Peter Tournay, a work colleague with whom I usually traveled to work each day. Although not a formal invitation he had suggested I might attend the reception if I could get a leave pass from Leeuwin. For some reason Leeuwin was a closed camp that weekend perhaps because we had only a couple of weeks to go to complete our national service obligation. In an act of bravado (for me) I decided to use the hole in the fence to attend the wedding reception (the service was not possible because my escape would have been in broad daylight – far too risky) and in my best number one uniform just after dark I made my escape. It probably took me an hour or two to reach the reception in Victoria Park, having to walk briskly from the street at the back of Leeuwin to the nearest bus stop and then a bus into Fremantle, another to Perth and another to Victoria Park and the reception location. I made it, to the surprise of many at the reception who were mostly work colleagues and of course in naval uniform I was fairly obvious. Arriving just after dinner I was welcomed by Peter and his new wife and stayed during the dancing that followed dinner, the throwing of the garter and the line up of guests farewelling the married couple on their honeymoon departure. I left soon after and made my way back to Leeuwin and the hole in the fence. Although I was able to get the bus from Perth to Fremantle the shorter bus run from Fremantle to the vicinity of Leeuwin ceased at midnight and I had a longish walk from the traffic bridge back to the street behind the base (a street full of navy married quarters) and finally the hole in the fence. I quickly folded my number one uniform and poked it back into my locker. My hammock had been slung for me by my mates and stuffed with pillows and an extra mattress to make it look occupied. I removed these, stowed them away in the hammock bin and climbed into my hammock and slept fitfully till dawn and the call to hit the deck. I had got away with my one and only escape escapade.</p>
       
     
       
@@ -722,7 +1606,7 @@
       
     
       
-        <p>Our final few days were quite idle but then an incident occurred that caused me some alarm. A friend from my Collie childhood appeared in uniform having arrived by air from Sydney. It was Geoff Fogarty with whom I had shared many a childhood adventure. It seems that Geoff had been in the National Service intake in the six months after my own. He had returned from weekend leave somewhat inebriated and he had fallen asleep on top of the lockers. A spot inspection by the duty officer (no doubt looking for something to do), a Sub-lieutenant, had occurred and Geoff was ordered to stand up. He slid himself off the lockers and whether as a result of his inebriation or simply standing up from having been horizontal in a drunken sleep he stumbled and fell against the duty officer (dressed in his evening wardroom kit of black trousers, white shirt with rank insignia on his shoulder epaulettes and black cummerbund). He was immediately charged with striking an officer and found guilty (presumably in a court martial) and awarded detention for forty days followed by a dishonorable discharge. As was the practice at that time the maximum period of detention could only be served at the Military Detention Centre at Holsworthy, New South Wales. He was taken there by air with an escort of two leading seaman and served his time. The story I have recounted was given to me by Geoff and corroborated by others who had arrived at Leeuwin for their second period of training. I was confounded by the story. It was after all only seven or eight years since Geoff and I had ridden our bikes together, caught gilgies in the local creeks together, swam in pools together and picked boronia in the swamps around Collie. We were look-alikes, same build, fair hair to the extent that we were sometimes mistaken for brothers. It seemed impossible that he would in any circumstance have assaulted an officer or anyone else for that matter. The resulting punishment was (and remains) in my mind grossly inappropriate. I can easily picture the situation, an up-jumped sub-lieutenant in his fancy wardroom dinner dress deciding to do an unannounced inspection of the Nasho sleeping deck at 9.00pm as the liberty men were arriving back from a weekend leave. Perhaps Geoff was administratively discharged without the ignominy of a dishonorable discharge. The latter remains as a stain on one’s career for the rest of life. I believe that offences and punishments incurred during national service training were expunged from the record but I am not certain of that. Against that one would wonder at the sheer cost of the resulting action; the cost of three return air fares at the time when air travel was a very expensive undertaking and Geoff’s detention (imprisonment) in a military prison that had a reputation for harshness. I was left wondering at what constituted justice in the Navy. During the few days Geoff spent at Leeuwin he was required to report to the duty room several times each day but finally he was released to return to Collie. I believe he was given a rail pass but beyond that he was stony broke.  I offered him a pound and after some persuasion he took it. A week or two later I received a letter from him with a one pound postal note enclosed. I may have replied but it was the last contact I had with my friend Geoff Fogarty.</p>
+        <p>Our final few days were quite idle but then an incident occurred that caused me some alarm. A friend from my Collie childhood appeared in uniform having arrived by air from Sydney. It was Geoff Fogarty with whom I had shared many a childhood adventure. It seems that Geoff had been in the National Service intake in the six months after my own. He had returned from weekend leave somewhat inebriated and he had fallen asleep on top of the lockers. A spot inspection by the duty officer (no doubt looking for something to do), a Sub-lieutenant, had occurred and Geoff was ordered to stand up. He slid himself off the lockers and whether as a result of his inebriation or simply standing up from having been horizontal in a drunken sleep he stumbled and fell against the duty officer (dressed in his evening wardroom kit of black trousers, white shirt with rank insignia on his shoulder epaulettes and black cummerbund). He was immediately charged with striking an officer and found guilty (presumably in a court martial) and awarded detention for forty days followed by a dishonorable discharge. As was the practice at that time the maximum period of detention could only be served at the Military Detention Centre at Holsworthy, New South Wales. He was taken there by air with an escort of two leading seaman and served his time. The story I have recounted was given to me by Geoff and corroborated by others who had arrived at Leeuwin for their second period of training. I was confounded by the story. It was after all only seven or eight years since Geoff and I had ridden our bikes together, caught gilgies in the local creeks together, swam in pools together and picked boronia in the swamps around Collie. We were look-alikes, same build, fair hair to the extent that we were sometimes mistaken for brothers. It seemed impossible that he would in any circumstance have assaulted an officer or anyone else for that matter. The resulting punishment was (and remains) in my mind grossly inappropriate. I can easily picture the situation, an up-jumped sub-lieutenant in his fancy wardroom dinner dress deciding to do an unannounced inspection of the Nasho sleeping deck at 9.00pm as the liberty men were arriving back from a weekend leave. Perhaps Geoff was administratively discharged without the ignominy of a dishonorable discharge. The latter remains as a stain on one’s career for the rest of life. I believe that offences and punishments incurred during national service training were expunged from the record but I am not certain of that. Against that one would wonder at the sheer cost of the resulting action; the cost of three return air fares at the time when air travel was a very expensive undertaking and Geoff’s detention (imprisonment) in a military prison that had a reputation for harshness. I was left wondering at what constituted justice in the Navy. During the few days Geoff spent at Leeuwin he was required to report to the duty room several times each day but finally he was released to return to Collie. I believe he was given a rail pass but beyond that he was stony broke. I offered him a pound and after some persuasion he took it. A week or two later I received a letter from him with a one pound postal note enclosed. I may have replied but it was the last contact I had with my friend Geoff Fogarty.</p>
       
     
       
@@ -888,6 +1772,10 @@
       
     
       
+        <h2 id="notes">Notes</h2>
+      
+    
+      
         <section class="footnotes" aria-label="Footnotes">
           <h2>Notes</h2>
           <ol>
@@ -915,7 +1803,847 @@
   
 
 
+  </main>
 </div>
+<button class="toc-fab" id="tocFab" type="button" aria-label="Open contents">☰ Contents</button>
+<div class="toc-overlay" id="tocOverlay"></div>
+<aside class="toc-drawer" id="tocDrawer" aria-label="Contents">
+  <div class="toc-dhead">
+    <span class="t">Contents</span>
+    <button class="x" id="tocClose" type="button" aria-label="Close contents">×</button>
+  </div>
+  <div class="toc-dlist">
+    <input class="toc-filter" id="tocFilterDrawer" placeholder="Filter sections…">
+    <div class="toc-list" id="tocDrawerList">
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">I was here.</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#i-was-here" data-target="i-was-here" class="active">I was here.</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">National Service comes to Australia</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#national-service-comes-to-australia" data-target="national-service-comes-to-australia">National Service comes to Australia</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Navy – my preference</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#navy-my-preference" data-target="navy-my-preference">Navy – my preference</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">THE FIRST FOUR MONTHS - 1953</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-first-four-months-1953" data-target="the-first-four-months-1953">THE FIRST FOUR MONTHS - 1953</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">I front up</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#i-front-up" data-target="i-front-up">I front up</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">HMAS Leeuwin</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#hmas-leeuwin" data-target="hmas-leeuwin">HMAS Leeuwin</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Day 1 – the uniform</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#day-1-the-uniform" data-target="day-1-the-uniform">Day 1 – the uniform</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The hammock</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-hammock" data-target="the-hammock">The hammock</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Pay day</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#pay-day" data-target="pay-day">Pay day</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The ‘voice’</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-voice" data-target="the-voice">The ‘voice’</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Recruit ‘Stoker’ Skitch</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#recruit-stoker-skitch" data-target="recruit-stoker-skitch">Recruit ‘Stoker’ Skitch</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Hodge – Lieutenant Commander RAN</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#hodge-lieutenant-commander-ran" data-target="hodge-lieutenant-commander-ran">Hodge – Lieutenant Commander RAN</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Piping</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#piping" data-target="piping">Piping</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Training starts – drill</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#training-starts-drill" data-target="training-starts-drill">Training starts – drill</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Ranks</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#ranks" data-target="ranks">Ranks</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The medical</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-medical" data-target="the-medical">The medical</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">And sex</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#and-sex" data-target="and-sex">And sex</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Our training broadens</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#our-training-broadens" data-target="our-training-broadens">Our training broadens</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Damage control</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#damage-control" data-target="damage-control">Damage control</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Stoking</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#stoking" data-target="stoking">Stoking</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Leave at last</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#leave-at-last" data-target="leave-at-last">Leave at last</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">A lecture from Hodge</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#a-lecture-from-hodge" data-target="a-lecture-from-hodge">A lecture from Hodge</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Naval lingo</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#naval-lingo" data-target="naval-lingo">Naval lingo</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Who might sail?</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#who-might-sail" data-target="who-might-sail">Who might sail?</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">A sporting life</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#a-sporting-life" data-target="a-sporting-life">A sporting life</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">SEA GOING AT LAST</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#sea-going-at-last" data-target="sea-going-at-last">SEA GOING AT LAST</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Corvettes</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#corvettes" data-target="corvettes">Corvettes</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Day one aboard</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#day-one-aboard" data-target="day-one-aboard">Day one aboard</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Bells and Watches</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#bells-and-watches" data-target="bells-and-watches">Bells and Watches</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The boiler room</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-boiler-room" data-target="the-boiler-room">The boiler room</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The engine room</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-engine-room" data-target="the-engine-room">The engine room</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Underway</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#underway" data-target="underway">Underway</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Inspections</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#inspections" data-target="inspections">Inspections</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Sea Sickness</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#sea-sickness" data-target="sea-sickness">Sea Sickness</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">A Ship of War</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#a-ship-of-war" data-target="a-ship-of-war">A Ship of War</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Ship-board activities</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#ship-board-activities" data-target="ship-board-activities">Ship-board activities</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Our voyages</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#our-voyages" data-target="our-voyages">Our voyages</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Our Sister Ship HMAS Mildura</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#our-sister-ship-hmas-mildura" data-target="our-sister-ship-hmas-mildura">Our Sister Ship HMAS Mildura</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Other ships</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#other-ships" data-target="other-ships">Other ships</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Stokers allowed being Seamen</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#stokers-allowed-being-seamen" data-target="stokers-allowed-being-seamen">Stokers allowed being Seamen</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Coral Sea Week</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#coral-sea-week" data-target="coral-sea-week">Coral Sea Week</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">And we come to an end</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#and-we-come-to-an-end" data-target="and-we-come-to-an-end">And we come to an end</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">THE SECOND PERIOD - 1954</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-second-period-1954" data-target="the-second-period-1954">THE SECOND PERIOD - 1954</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">South to Bunbury</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#south-to-bunbury" data-target="south-to-bunbury">South to Bunbury</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">North to Geraldton – and a broken voice</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#north-to-geraldton-and-a-broken-voice" data-target="north-to-geraldton-and-a-broken-voice">North to Geraldton – and a broken voice</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Mates</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#mates" data-target="mates">Mates</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Back to Leeuwin</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#back-to-leeuwin" data-target="back-to-leeuwin">Back to Leeuwin</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Through the fence</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#through-the-fence" data-target="through-the-fence">Through the fence</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Naval justice</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#naval-justice" data-target="naval-justice">Naval justice</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">It comes to an end</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#it-comes-to-an-end" data-target="it-comes-to-an-end">It comes to an end</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 1</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-1" data-target="plate-1">PLATE 1</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 2</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-2" data-target="plate-2">PLATE 2</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 3</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-3" data-target="plate-3">PLATE 3</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Warburton.</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#warburton" data-target="warburton">Warburton.</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 4</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-4" data-target="plate-4">PLATE 4</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Fremantle Harbour.</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#fremantle-harbour" data-target="fremantle-harbour">Fremantle Harbour.</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 5</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-5" data-target="plate-5">PLATE 5</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">PLATE 6</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#plate-6" data-target="plate-6">PLATE 6</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">ON DIRK HARTOG’S ISLAND</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#on-dirk-hartogs-island" data-target="on-dirk-hartogs-island">ON DIRK HARTOG’S ISLAND</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The lighthouse</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-lighthouse" data-target="the-lighthouse">The lighthouse</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The Inscription</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-inscription" data-target="the-inscription">The Inscription</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">The coastline</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#the-coastline" data-target="the-coastline">The coastline</a>
+          
+        </div>
+      </div>
+      
+      <div class="toc-grp">
+        <button class="toc-ghead" type="button">
+          <span class="car">▸</span>
+          <span class="gt">Notes</span>
+          <span class="gc">0</span>
+        </button>
+        <div class="toc-kids">
+          <a href="#notes" data-target="notes">Notes</a>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</aside>
+<script>
+(function(){
+  // Expand the first group on load so the rail isn't all collapsed.
+  document.querySelectorAll('.toc-grp').forEach(function(g, i){ if(i === 0) g.classList.add('open'); });
+  // Header-click toggles a group.
+  document.addEventListener('click', function(e){
+    var head = e.target.closest('.toc-ghead');
+    if(head){ head.parentNode.classList.toggle('open'); return; }
+    var a = e.target.closest('.toc-kids a[data-target]');
+    if(!a) return;
+    var el = document.getElementById(a.dataset.target);
+    if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); closeDrawer(); history.pushState(null, '', '#' + a.dataset.target); }
+  });
+  // Drawer open/close.
+  var drawer = document.getElementById('tocDrawer'),
+      overlay = document.getElementById('tocOverlay');
+  function openDrawer(){ drawer.classList.add('open'); overlay.classList.add('open'); }
+  function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('open'); }
+  document.getElementById('tocFab').addEventListener('click', openDrawer);
+  document.getElementById('tocClose').addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  // Filter wiring (both copies).
+  function wireFilter(input, listEl){
+    if(!input || !listEl) return;
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      var any = false;
+      listEl.querySelectorAll('.toc-grp').forEach(function(grp){
+        var headTxt = grp.querySelector('.gt').textContent.toLowerCase();
+        var gMatch = headTxt.indexOf(q) >= 0;
+        var kidShown = false;
+        grp.querySelectorAll('.toc-kids a').forEach(function(a){
+          var m = q === '' || gMatch || a.textContent.toLowerCase().indexOf(q) >= 0;
+          a.style.display = m ? 'block' : 'none';
+          if(m) kidShown = true;
+        });
+        var show = q === '' ? true : (gMatch || kidShown);
+        grp.style.display = show ? 'block' : 'none';
+        if(show) any = true;
+        if(q !== '' && (gMatch || kidShown)) grp.classList.add('open');
+      });
+      var empty = listEl.querySelector('.toc-empty');
+      if(!any && !empty){
+        empty = document.createElement('div');
+        empty.className = 'toc-empty';
+        empty.textContent = 'No sections match.';
+        listEl.appendChild(empty);
+      }
+      if(any && empty) empty.remove();
+    });
+  }
+  wireFilter(document.getElementById('tocFilterRail'),   document.getElementById('tocRailList'));
+  wireFilter(document.getElementById('tocFilterDrawer'), document.getElementById('tocDrawerList'));
+  // Scrollspy: highlight the rail entry whose heading is currently topmost.
+  var heads = Array.prototype.slice.call(document.querySelectorAll('article h2, article h3'));
+  var nowbar = document.getElementById('tocNowbar');
+  function spy(){
+    var y = window.scrollY + 90, cur = heads[0];
+    heads.forEach(function(h){ if(h.offsetTop <= y) cur = h; });
+    if(!cur) return;
+    if(nowbar) nowbar.textContent = cur.textContent;
+    document.querySelectorAll('.toc-kids a').forEach(function(a){
+      a.classList.toggle('active', a.dataset.target === cur.id);
+    });
+  }
+  window.addEventListener('scroll', spy, {passive:true});
+  spy();
+})();
+</script>
 
 
 </body></html>
