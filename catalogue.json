@@ -1,4 +1,25 @@
 {
-  "entries": [],
-  "rebuilt": "2026-06-08T11:06:51.905798+00:00"
+  "entries": [
+    {
+      "stem": "1934-1945_junior",
+      "title": "Junior",
+      "years": "1934–1945",
+      "description": "The boy I once knew but now remember",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html",
+      "source": "generated",
+      "needs_description": false,
+      "published": "2026-06-08T12:19:40.381655+00:00"
+    },
+    {
+      "stem": "1945-1955_the-years-between",
+      "title": "The Years Between",
+      "years": "1945–1955",
+      "description": "The story of a teenage boy and his mother.",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1945-1955_the-years-between.html",
+      "source": "generated",
+      "needs_description": false,
+      "published": "2026-06-08T18:44:42.359815+00:00"
+    }
+  ],
+  "rebuilt": "2026-06-08T18:45:29.700873+00:00"
 }
