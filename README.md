@@ -1,5 +1,8 @@
 # The Skitch Family Archive
 
+[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-green.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![Built with MemoirForge](https://img.shields.io/badge/built_with-MemoirForge-8a5a44.svg)](https://github.com/chris-skitch/MemoirForge)
+
 A living collection of family history — stories, records, and memories gathered from letters, photographs, and the recollections of those who lived them.
 
 ### 📖 Read the archive → **<https://chris-skitch.github.io/family-history/>**
