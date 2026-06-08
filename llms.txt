@@ -4,7 +4,6 @@ Test welcome
 
 ## Documents
 
-- [NATIONAL SERVICE](https://chris-skitch.github.io/family-history/rfs/1942-1954_national-service.html) — 1942–1954
 - [In The Navy](https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html) — 1953–1954
   A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy.
 - [The Army Years - Part 3 - Singapore](https://chris-skitch.github.io/family-history/rfs/1969-1970_the-army-years-part-3-singapore.html) — 1969–1970

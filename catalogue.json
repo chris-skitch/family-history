@@ -1,16 +1,6 @@
 {
   "entries": [
     {
-      "stem": "1942-1954_national-service",
-      "title": "NATIONAL SERVICE",
-      "years": "1942–1954",
-      "description": "",
-      "url": "https://chris-skitch.github.io/family-history/rfs/1942-1954_national-service.html",
-      "source": "generated",
-      "needs_description": true,
-      "published": "2026-06-07T18:33:04.007082+00:00"
-    },
-    {
       "stem": "1953-1954_in-the-navy",
       "title": "In The Navy",
       "years": "1953–1954",
@@ -41,5 +31,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-08T11:06:11.783030+00:00"
+  "rebuilt": "2026-06-08T11:06:25.700046+00:00"
 }
