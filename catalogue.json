@@ -1,0 +1,45 @@
+{
+  "entries": [
+    {
+      "stem": "1942-1954_national-service",
+      "title": "NATIONAL SERVICE",
+      "years": "1942–1954",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1942-1954_national-service.html",
+      "source": "generated",
+      "needs_description": true,
+      "published": "2026-06-07T18:33:04.007082+00:00"
+    },
+    {
+      "stem": "1953-1954_in-the-navy",
+      "title": "In The Navy",
+      "years": "1953–1954",
+      "description": "A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy.",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html",
+      "source": "generated",
+      "needs_description": false,
+      "published": "2026-06-07T16:18:42.262588+00:00"
+    },
+    {
+      "stem": "1969-1970_the-army-years-part-3-singapore",
+      "title": "The Army Years - Part 3 - Singapore",
+      "years": "1969–1970",
+      "description": "Amidst the mid-century Commonwealth military presence, an officer's family navigates the detailed preparations for their two-year posting to Singapore, including extensive packing.",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1969-1970_the-army-years-part-3-singapore.html",
+      "source": "generated",
+      "needs_description": false,
+      "published": "2026-06-07T22:43:42.101387+00:00"
+    },
+    {
+      "stem": "2010_three-days-in-berlin-part-1",
+      "title": "Three Days in Berlin - Part 1",
+      "years": "2010",
+      "description": "This account traces a twentieth-century life profoundly shaped by Nazism, global conflict, and the enduring division centered on the city of Berlin.",
+      "url": "https://chris-skitch.github.io/family-history/rfs/2010_three-days-in-berlin-part-1.html",
+      "source": "adopted",
+      "needs_description": false,
+      "published": ""
+    }
+  ],
+  "rebuilt": "2026-06-08T11:06:11.783030+00:00"
+}
