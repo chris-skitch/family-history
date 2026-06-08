@@ -4,5 +4,3 @@ Test welcome
 
 ## Documents
 
-- [In The Navy](https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html) — 1953–1954
-  A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy.
