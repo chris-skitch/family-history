@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Junior">
 <meta name="twitter:description" content="The boy I once knew but now remember">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Junior","description":"The boy I once knew but now remember","url":"https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html","inLanguage":"en","author":{"@type":"Person","@id":"https://chris-skitch.github.io/family-history/index.html#author","name":"Robert Francis Skitch"},"temporalCoverage":"1934/1945","datePublished":"2026-06-09T12:28:19.943149+00:00","isPartOf":{"@type":"CreativeWorkSeries","@id":"https://chris-skitch.github.io/family-history/index.html#collection","name":"The Family Archive","url":"https://chris-skitch.github.io/family-history/index.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Junior","description":"The boy I once knew but now remember","url":"https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html","inLanguage":"en","author":{"@type":"Person","@id":"https://chris-skitch.github.io/family-history/index.html#author","name":"Robert Francis Skitch"},"temporalCoverage":"1934/1945","datePublished":"2026-06-09T13:12:00.554981+00:00","isPartOf":{"@type":"CreativeWorkSeries","@id":"https://chris-skitch.github.io/family-history/index.html#collection","name":"The Family Archive","url":"https://chris-skitch.github.io/family-history/index.html"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
@@ -265,6 +265,83 @@
   }
   footer .mark{font-family:"Fraunces",serif;color:var(--accent);font-weight:600;}
 
+  /* ---- Reading nav: bottom prev/next (sits ABOVE the document footer) ---- */
+  nav.docnav{
+    margin-top:3.5rem;
+    padding-top:1.8rem;
+    border-top:1px solid var(--rule);
+    display:flex;
+    align-items:stretch;
+    gap:.8rem;
+    flex-wrap:wrap;
+  }
+  nav.docnav a{
+    flex:1;
+    min-width:150px;
+    text-decoration:none;
+    color:inherit;
+    border:1px solid var(--rule);
+    border-radius:10px;
+    padding:.8rem 1rem;
+    background:#fffdf9;
+    transition:transform .15s, border-color .15s;
+  }
+  nav.docnav a:hover{transform:translateY(-2px); border-color:#d9cdb8;}
+  nav.docnav .dir{
+    font-family:"Fraunces",serif;
+    font-size:.68rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin:0 0 .25rem;
+  }
+  nav.docnav .nm{
+    font-family:"Fraunces",serif;
+    font-weight:600;
+    color:var(--ink);
+    font-size:.98rem;
+  }
+  nav.docnav a.home{
+    flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:"Fraunces",serif;
+    font-weight:600;
+    color:var(--accent-deep);
+  }
+  nav.docnav a.next{text-align:right;}
+
+  /* ---- Reading nav: floating back-to-top ---- */
+  .totop{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:50;
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    font-size:1.1rem;
+    box-shadow:0 8px 22px -8px rgba(124,66,38,.6);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s, transform .25s;
+    transform:translateY(8px);
+  }
+  .totop.show{opacity:1; pointer-events:auto; transform:none;}
+  .totop:hover{background:var(--accent-deep);}
+  @media (prefers-reduced-motion:reduce){
+    .totop{transition:none!important;}
+  }
+
   a.figback{color:inherit;text-decoration:none;}
 
   /* ---- Footnotes (inline, co-located) ---- */
@@ -333,6 +410,17 @@
     letter-spacing:.16em; text-transform:uppercase;
     color:var(--accent-deep); margin:0 0 .8rem;
   }
+  /* Contents-panel action row (Top + Archive) — above the filter box,
+     in both the sticky rail and the mobile drawer. */
+  .navacts{display:flex; gap:.5rem; margin:0 0 .9rem;}
+  .navacts a{
+    flex:1; display:flex; align-items:center; justify-content:center; gap:.35rem;
+    text-decoration:none; font-family:"Fraunces",serif; font-weight:600;
+    font-size:.82rem; color:var(--accent-deep); background:var(--paper);
+    border:1px solid var(--rule); border-radius:8px; padding:.45rem .5rem;
+    cursor:pointer; transition:background .15s, border-color .15s;
+  }
+  .navacts a:hover{background:#fffdf9; border-color:#d9cdb8;}
   /* Shared ToC list styling (used by both the rail and the drawer) */
   .toc-list{font-size:.92rem;}
   .toc-grp{border-bottom:1px solid var(--rule);}
@@ -431,6 +519,9 @@
     body.has-toc .toc-fab{display:flex;}
     body.has-toc .toc-nowbar{display:block;}
     body.has-toc .article{padding-top:3.2rem;}
+    /* Lift the back-to-top clear of the floating Contents button so the
+       two never overlap (the FAB sits at bottom:18px). */
+    body.has-toc .totop{bottom:76px;}
     .toc-drawer{
       top:auto; left:0; right:0; bottom:0; width:100%; max-width:100%;
       height:80%; border-left:none; border-top:1px solid var(--rule);
@@ -450,6 +541,10 @@
 <div class="layout">
   <aside class="toc-rail" aria-label="Contents">
     <p class="railhead">Contents</p>
+    <div class="navacts">
+      <a href="#top" data-top>↑ Top</a>
+      <a href="https://chris-skitch.github.io/family-history/index.html">⌂ The Archive</a>
+    </div>
     <input class="toc-filter" id="tocFilterRail" placeholder="Filter sections…">
     <div class="toc-list" id="tocRailList">
       
@@ -751,7 +846,7 @@
       
     </div>
   </aside>
-  <main class="article">
+  <main class="article" id="top">
 
 
   <header class="masthead">
@@ -1187,6 +1282,15 @@
   </article>
 
   
+  
+  <nav class="docnav" aria-label="Document navigation">
+    
+    <a class="home" href="https://chris-skitch.github.io/family-history/index.html">⌂ The Archive</a>
+    <a class="next" href="https://chris-skitch.github.io/family-history/rfs/1945-1955_the-years-between.html"><div class="dir">Next →</div><div class="nm">The Years Between</div></a>
+  </nav>
+  
+
+  
   <footer>
     <p>© Christopher M.R. Skitch · The Skitch Family Archive · Licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> — read and share with attribution; no commercial use or adaptations.
 
@@ -1205,6 +1309,10 @@
     <button class="x" id="tocClose" type="button" aria-label="Close contents">×</button>
   </div>
   <div class="toc-dlist">
+    <div class="navacts">
+      <a href="#top" data-top>↑ Top</a>
+      <a href="https://chris-skitch.github.io/family-history/index.html">⌂ The Archive</a>
+    </div>
     <input class="toc-filter" id="tocFilterDrawer" placeholder="Filter sections…">
     <div class="toc-list" id="tocDrawerList">
       
@@ -1514,8 +1622,18 @@
   // expand a leaf which has nothing inside to show.
   var firstBranch = document.querySelector('.toc-grp:not(.toc-leaf)');
   if(firstBranch) firstBranch.classList.add('open');
+  // Reduced-motion-aware smooth scroll for the in-panel nav.
+  function tocReduced(){ return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
   // Header-click toggles a BRANCH group; leaf links navigate directly.
   document.addEventListener('click', function(e){
+    // "↑ Top" action-row link — scroll to the top of the document.
+    var topLink = e.target.closest('a[data-top]');
+    if(topLink){
+      e.preventDefault();
+      window.scrollTo({top:0, behavior: tocReduced() ? 'auto' : 'smooth'});
+      closeDrawer();
+      return;
+    }
     var head = e.target.closest('.toc-ghead');
     if(head){ head.parentNode.classList.toggle('open'); return; }
     // Both child links in expanded branches AND leaf links navigate.
@@ -1590,5 +1708,20 @@
 })();
 </script>
 
+
+
+<button class="totop" id="totop" type="button" aria-label="Back to top">↑</button>
+<script>
+(function(){
+  var totop = document.getElementById('totop');
+  if(!totop) return;
+  function reduced(){ return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function toTop(){ window.scrollTo({top:0, behavior: reduced() ? 'auto' : 'smooth'}); }
+  function onScroll(){ totop.classList.toggle('show', window.scrollY > 600); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  totop.addEventListener('click', toTop);
+})();
+</script>
 </body>
 </html>
