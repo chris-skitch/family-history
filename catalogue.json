@@ -4,10 +4,11 @@
       "stem": "1934-1945_junior",
       "title": "Junior",
       "years": "1934–1945",
-      "description": "The boy I once knew but now remember",
+      "description": "",
       "url": "https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html",
+      "subtitle": "The boy I once knew but now remember",
       "source": "generated",
-      "needs_description": false,
+      "needs_description": true,
       "word_count": 28904,
       "published": "2026-06-08T12:19:40.381655+00:00"
     },
@@ -15,10 +16,11 @@
       "stem": "1945-1955_the-years-between",
       "title": "The Years Between",
       "years": "1945–1955",
-      "description": "The story of a teenage boy and his mother.",
+      "description": "",
       "url": "https://chris-skitch.github.io/family-history/rfs/1945-1955_the-years-between.html",
+      "subtitle": "The story of a teenage boy and his mother.",
       "source": "generated",
-      "needs_description": false,
+      "needs_description": true,
       "word_count": 91733,
       "published": "2026-06-08T18:44:42.359815+00:00"
     },
@@ -26,10 +28,11 @@
       "stem": "1953-1954_in-the-navy",
       "title": "In The Navy",
       "years": "1953–1954",
-      "description": "A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy",
+      "description": "",
       "url": "https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html",
+      "subtitle": "A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy",
       "source": "generated",
-      "needs_description": false,
+      "needs_description": true,
       "word_count": 19941,
       "published": "2026-06-08T20:19:34.525791+00:00"
     },
@@ -37,13 +40,14 @@
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
       "title": "The Army Years - Part 1 - The Young Soldier Surveyor",
       "years": "1955–1962",
-      "description": "From rigorous basic training in Kapooka to the specialized field projects of the Survey Corps, this is the compelling journey of a young Australian soldier's rise through the ranks. Follow his path of discipline, sacrifice, and dedication as he navigates early military life to earn his commission as an army officer.",
+      "description": "",
       "url": "https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html",
+      "subtitle": "From rigorous basic training in Kapooka to the specialized field projects of the Survey Corps, this is the compelling journey of a young Australian soldier's rise through the ranks. Follow his path of discipline, sacrifice, and dedication as he navigates early military life to earn his commission as an army officer.",
       "source": "generated",
-      "needs_description": false,
+      "needs_description": true,
       "word_count": 120722,
       "published": "2026-06-09T10:53:45.927241+00:00"
     }
   ],
-  "rebuilt": "2026-06-09T11:31:55.358824+00:00"
+  "rebuilt": "2026-06-09T12:03:11.415397+00:00"
 }
