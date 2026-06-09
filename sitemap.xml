@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chris-skitch.github.io/family-history/index.html</loc>
-    <lastmod>2026-06-08T20:20:16.204039+00:00</lastmod>
+    <lastmod>2026-06-09T10:12:02.329440+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,6 +19,11 @@
   <url>
     <loc>https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html</loc>
     <lastmod>2026-06-08T20:19:34.525791+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html</loc>
+    <lastmod>2026-06-09T10:10:48.915090+00:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
 </urlset>
