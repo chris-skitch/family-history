@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="In The Navy">
 <meta name="twitter:description" content="A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"In The Navy","description":"A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy","url":"https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html","inLanguage":"en","author":{"@type":"Person","@id":"https://chris-skitch.github.io/family-history/index.html#author","name":"Robert Francis Skitch"},"temporalCoverage":"1953/1954","datePublished":"2026-06-09T13:12:10.972221+00:00","isPartOf":{"@type":"CreativeWorkSeries","@id":"https://chris-skitch.github.io/family-history/index.html#collection","name":"The Family Archive","url":"https://chris-skitch.github.io/family-history/index.html"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"In The Navy","description":"A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy","url":"https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html","inLanguage":"en","author":{"@type":"Person","@id":"https://chris-skitch.github.io/family-history/index.html#author","name":"Robert Francis Skitch"},"temporalCoverage":"1953/1954","datePublished":"2026-06-09T13:46:01.537470+00:00","isPartOf":{"@type":"CreativeWorkSeries","@id":"https://chris-skitch.github.io/family-history/index.html#collection","name":"The Family Archive","url":"https://chris-skitch.github.io/family-history/index.html"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
@@ -519,9 +519,10 @@
     body.has-toc .toc-fab{display:flex;}
     body.has-toc .toc-nowbar{display:block;}
     body.has-toc .article{padding-top:3.2rem;}
-    /* Lift the back-to-top clear of the floating Contents button so the
-       two never overlap (the FAB sits at bottom:18px). */
-    body.has-toc .totop{bottom:76px;}
+    /* On mobile the floating Contents button is the return affordance, so
+       the back-to-top arrow is redundant here — hide it. (It stays on
+       desktop, and on docs that have no Contents button at all.) */
+    body.has-toc .totop{display:none;}
     .toc-drawer{
       top:auto; left:0; right:0; bottom:0; width:100%; max-width:100%;
       height:80%; border-left:none; border-top:1px solid var(--rule);
