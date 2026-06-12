@@ -1,6 +1,18 @@
 {
   "entries": [
     {
+      "stem": "1933-1945_three-days-in-berlin",
+      "title": "THREE DAYS IN BERLIN",
+      "years": "1933–1945",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1933-1945_three-days-in-berlin.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 3672,
+      "published": ""
+    },
+    {
       "stem": "1934-1945_junior",
       "title": "Junior",
       "years": "1934–1945",
@@ -9,8 +21,8 @@
       "subtitle": "The boy I once knew but now remember",
       "source": "generated",
       "needs_description": true,
-      "word_count": 28903,
-      "published": "2026-06-11T21:24:49.844279+00:00"
+      "word_count": 28916,
+      "published": "2026-06-12T18:54:13.364475+00:00"
     },
     {
       "stem": "1945-1955_the-years-between",
@@ -85,5 +97,5 @@
       "published": "2026-06-11T16:16:48.192710+00:00"
     }
   ],
-  "rebuilt": "2026-06-11T21:24:49.844279+00:00"
+  "rebuilt": "2026-06-12T18:54:13.364475+00:00"
 }

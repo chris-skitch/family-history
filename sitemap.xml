@@ -2,13 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chris-skitch.github.io/family-history/index.html</loc>
-    <lastmod>2026-06-11T21:24:49.844279+00:00</lastmod>
+    <lastmod>2026-06-12T18:54:13.364475+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://chris-skitch.github.io/family-history/rfs/1933-1945_three-days-in-berlin.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
     <loc>https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html</loc>
-    <lastmod>2026-06-11T21:24:49.844279+00:00</lastmod>
+    <lastmod>2026-06-12T18:54:13.364475+00:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
