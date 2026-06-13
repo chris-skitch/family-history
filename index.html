@@ -22,6 +22,7 @@
     --paper:#faf8f3; --paper-edge:#f3efe6; --ink:#2a2520; --ink-soft:#5b5248;
     --ink-faint:#8a8073; --accent:#9c5a3c; --accent-deep:#7d4226; --rule:#e4ddd0;
     --measure:680px;
+    --narr-bg:#f1eada; --narr-border:#b8a580;
   }
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;}
@@ -70,6 +71,9 @@
 
   footer{margin-top:3.5rem; padding-top:1.8rem; border-top:1px solid var(--rule);
     font-size:.84rem; color:var(--ink-faint); line-height:1.6;}
+  div.narrative{background:var(--narr-bg); border-left:3px solid var(--narr-border); border-radius:0 10px 10px 0; padding:1.05rem 1.25rem; margin:1.6rem 0;}
+  div.narrative p{margin:0 0 1.05rem;}
+  div.narrative p:last-child{margin-bottom:0;}
   footer p{margin:0 0 .5rem;}
   footer a{color:var(--accent-deep); text-decoration:none;}
   footer a:hover{text-decoration:underline;}
@@ -82,118 +86,41 @@
     .doc .meta{flex-wrap:wrap;}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+  .docgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.9rem;margin:0 0 1.1rem;}
+  .docgrid .doc{margin:0;padding:1.1rem 1.2rem .9rem;}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWorkSeries","@id":"https://chris-skitch.github.io/family-history/index.html#collection","name":"The Skitch Family Archive","url":"https://chris-skitch.github.io/family-history/index.html","description":"This is a living collection of family history - stories, records, and memories gathered from letters, photographs, and the recollections of those who lived them.\n\nThe Skitch name arrived in Western Australia aboard the lives of Cornish emigrants. What followed was five generations of foresters and farmers, singers and servicemen, ordinary people living through extraordinary times. These documents are an attempt to preserve what might otherwise be forgotten.\n\nThe collection begins with Bob Skitch — known to his family as Junior — and his account of growing up in the 1930s and 40s in a Western Australia still shaped by the rhythms of the bush. More volumes will follow as they are transcribed and prepared.","creator":{"@type":"Person","@id":"https://chris-skitch.github.io/family-history/index.html#author","name":"Robert Francis Skitch"},"hasPart":[{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1933-1945_three-days-in-berlin.html","name":"THREE DAYS IN BERLIN","url":"https://chris-skitch.github.io/family-history/rfs/1933-1945_three-days-in-berlin.html","datePublished":"","temporalCoverage":"1933/1945"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html","name":"Junior","url":"https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html","datePublished":"2026-06-12T18:54:13.364475+00:00","temporalCoverage":"1934/1945"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1945-1955_the-years-between.html","name":"The Years Between","url":"https://chris-skitch.github.io/family-history/rfs/1945-1955_the-years-between.html","datePublished":"2026-06-09T13:38:28.068223+00:00","temporalCoverage":"1945/1955"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html","name":"In The Navy","url":"https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html","datePublished":"2026-06-09T13:46:01.537470+00:00","temporalCoverage":"1953/1954"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html","name":"The Army Years - Part 1 - The Young Soldier Surveyor","url":"https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html","datePublished":"2026-06-09T13:46:58.318748+00:00","temporalCoverage":"1955/1962"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1961-1969_the-army-years-part-2-being-an-officer.html","name":"The Army Years - Part 2 - Being an Officer","url":"https://chris-skitch.github.io/family-history/rfs/1961-1969_the-army-years-part-2-being-an-officer.html","datePublished":"2026-06-11T16:16:45.820479+00:00","temporalCoverage":"1961/1969"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1969-1972_the-army-year-part-3-singapore.html","name":"The Army Years - Part 3 - Singapore","url":"https://chris-skitch.github.io/family-history/rfs/1969-1972_the-army-year-part-3-singapore.html","datePublished":"2026-06-11T16:02:09.649636+00:00","temporalCoverage":"1969/1972"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1971-1975_the-army-years-part-4-now-a-major.html","name":"The Army Years – Part 4 - Now a Major","url":"https://chris-skitch.github.io/family-history/rfs/1971-1975_the-army-years-part-4-now-a-major.html","datePublished":"2026-06-11T16:16:48.192710+00:00","temporalCoverage":"1971/1975"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWorkSeries","@id":"https://chris-skitch.github.io/family-history/index.html#collection","name":"The Skitch Family Archive","url":"https://chris-skitch.github.io/family-history/index.html","description":"This is a living collection of family history - stories, records, and memories gathered from letters, photographs, and the recollections of those who lived them.\n\nThe Skitch name arrived in Western Australia aboard the lives of Cornish emigrants. What followed was five generations of foresters and farmers, singers and servicemen, ordinary people living through extraordinary times. These documents are an attempt to preserve what might otherwise be forgotten. \n\nThe collection begins with Bob Skitch — known to his family as Junior — and his account of growing up in the 1930s and 40s in a Western Australia still shaped by the rhythms of the bush. More volumes will follow as they are transcribed and prepared.\n\n/\n\nTesting.","creator":{"@type":"Person","@id":"https://chris-skitch.github.io/family-history/index.html#author","name":"Robert Francis Skitch"},"hasPart":[{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html","name":"Junior","url":"https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html","datePublished":"2026-06-13T10:47:10.239226+00:00","temporalCoverage":"1934/1945"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1940-1955_the-year-between.html","name":"The Year Between","url":"https://chris-skitch.github.io/family-history/rfs/1940-1955_the-year-between.html","datePublished":"","temporalCoverage":"1940/1955"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1942-1954_national-service.html","name":"In The Navy","url":"https://chris-skitch.github.io/family-history/rfs/1942-1954_national-service.html","datePublished":"","temporalCoverage":"1953/1954"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html","name":"The Army Years - Part 1 - The Young Soldier Surveyor","url":"https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html","datePublished":"2026-06-09T13:46:58.318748+00:00","temporalCoverage":"1955/1962"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1961-1969_the-army-years-part-2-being-an-officer.html","name":"The Army Years - Part 2 - Being an Officer","url":"https://chris-skitch.github.io/family-history/rfs/1961-1969_the-army-years-part-2-being-an-officer.html","datePublished":"2026-06-09T19:13:12.382777+00:00","temporalCoverage":"1961/1969"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1969-1972_the-army-year-part-3-singapore.html","name":"The Army Years - Part 3 - Singapore","url":"https://chris-skitch.github.io/family-history/rfs/1969-1972_the-army-year-part-3-singapore.html","datePublished":"2026-06-09T18:47:58.400117+00:00","temporalCoverage":"1969/1972"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1971-1975_the-army-years-part-4-now-a-major.html","name":"The Army Years – Part 4 - Now a Major","url":"https://chris-skitch.github.io/family-history/rfs/1971-1975_the-army-years-part-4-now-a-major.html","datePublished":"2026-06-09T21:48:50.625781+00:00","temporalCoverage":"1971/1975"},{"@type":"Article","@id":"https://chris-skitch.github.io/family-history/rfs/1975-1981_the-army-years-part-5-in-command.html","name":"The Army Years - Part 5 - In Command","url":"https://chris-skitch.github.io/family-history/rfs/1975-1981_the-army-years-part-5-in-command.html","datePublished":"","temporalCoverage":"1975/1981"}]}</script>
 </head>
 <body>
 <div class="wrap">
 
   <p class="overline">The Family Archive · Collected Memoirs</p>
   <h1 class="title">The Skitch Family Archive</h1>
-
   
+    <p class="intro lead">This is a living collection of family history - stories, records, and memories gathered from letters, photographs, and the recollections of those who lived them.</p>
+    
   
-  <p class="intro lead">This is a living collection of family history - stories, records, and memories gathered from letters, photographs, and the recollections of those who lived them.</p>
+    <p class="intro">The Skitch name arrived in Western Australia aboard the lives of Cornish emigrants. What followed was five generations of foresters and farmers, singers and servicemen, ordinary people living through extraordinary times. These documents are an attempt to preserve what might otherwise be forgotten. </p>
+    
   
-  <p class="intro">The Skitch name arrived in Western Australia aboard the lives of Cornish emigrants. What followed was five generations of foresters and farmers, singers and servicemen, ordinary people living through extraordinary times. These documents are an attempt to preserve what might otherwise be forgotten.</p>
+    <p class="dedication">to Mum & Dad</p>
+    
   
-  <p class="intro">The collection begins with Bob Skitch — known to his family as Junior — and his account of growing up in the 1930s and 40s in a Western Australia still shaped by the rhythms of the bush. More volumes will follow as they are transcribed and prepared.</p>
+    <p class="intro">The collection begins with Bob Skitch — known to his family as Junior — and his account of growing up in the 1930s and 40s in a Western Australia still shaped by the rhythms of the bush. More volumes will follow as they are transcribed and prepared.</p>
+    
   
+    <hr class="div">
+    
   
-
-  <p class="dedication">For Mum and Dad. For the love. For the stories.</p>
-
-  <hr class="div">
-  <p class="seclabel">The Memoirs</p>
-
+    <p class="intro">/</p>
+    
   
-  <a class="doc" href="https://chris-skitch.github.io/family-history/rfs/1933-1945_three-days-in-berlin.html">
-    <p class="era">1933–1945</p>
-    <h2>THREE DAYS IN BERLIN</h2>
+    <p class="intro">Testing.</p>
     
-    
-    
-    <div class="meta"><span>3,672 words</span><span class="dot">·</span><span class="read">~20 min read</span><span class="arrow">Read →</span>
-    </div>
-    
-  </a>
   
-  <a class="doc" href="https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html">
-    <p class="era">1934–1945</p>
-    <h2>Junior</h2>
-    <p class="sub">The boy I once knew but now remember</p>
+    <hr class="div">
     
-    
-    <div class="meta"><span>28,916 words</span><span class="dot">·</span><span class="read">~2½ hr read</span><span class="arrow">Read →</span>
-    </div>
-    
-  </a>
   
-  <a class="doc" href="https://chris-skitch.github.io/family-history/rfs/1945-1955_the-years-between.html">
-    <p class="era">1945–1955</p>
-    <h2>The Years Between</h2>
-    <p class="sub">The story of a teenage boy and his mother.</p>
-    
-    
-    <div class="meta"><span>91,733 words</span><span class="dot">·</span><span class="read">~7½ hr read</span><span class="arrow">Read →</span>
-    </div>
-    
-  </a>
-  
-  <a class="doc" href="https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html">
-    <p class="era">1953–1954</p>
-    <h2>In The Navy</h2>
-    <p class="sub">A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy</p>
-    
-    
-    <div class="meta"><span>19,941 words</span><span class="dot">·</span><span class="read">~1½ hr read</span><span class="arrow">Read →</span>
-    </div>
-    
-  </a>
-  
-  <a class="doc" href="https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html">
-    <p class="era">1955–1962</p>
-    <h2>The Army Years - Part 1 - The Young Soldier Surveyor</h2>
-    <p class="sub">From rigorous basic training in Kapooka to the specialized field projects of the Survey Corps, this is the compelling journey of a young Australian soldier's rise through the ranks. Follow his path of discipline, sacrifice, and dedication as he navigates early military life to earn his commission as an army officer.</p>
-    
-    
-    <div class="meta"><span>120,722 words</span><span class="dot">·</span><span class="read">~10 hr read</span><span class="arrow">Read →</span>
-    </div>
-    
-  </a>
-  
-  <a class="doc" href="https://chris-skitch.github.io/family-history/rfs/1961-1969_the-army-years-part-2-being-an-officer.html">
-    <p class="era">1961–1969</p>
-    <h2>The Army Years - Part 2 - Being an Officer</h2>
-    <p class="sub">In mid-20th century Sydney, a service family navigates the era's housing market, contending with military relocation stipulations and societal aftermath of conflict.</p>
-    
-    
-    <div class="meta"><span>41,409 words</span><span class="dot">·</span><span class="read">~3½ hr read</span><span class="arrow">Read →</span>
-    </div>
-    
-  </a>
-  
-  <a class="doc" href="https://chris-skitch.github.io/family-history/rfs/1969-1972_the-army-year-part-3-singapore.html">
-    <p class="era">1969–1972</p>
-    <h2>The Army Years - Part 3 - Singapore</h2>
-    <p class="sub">A military family navigates the intricate logistics of an overseas posting to Singapore, meticulously preparing for their two-year assignment under mid-century Commonwealth administration.</p>
-    
-    
-    <div class="meta"><span>48,731 words</span><span class="dot">·</span><span class="read">~4 hr read</span><span class="arrow">Read →</span>
-    </div>
-    
-  </a>
-  
-  <a class="doc" href="https://chris-skitch.github.io/family-history/rfs/1971-1975_the-army-years-part-4-now-a-major.html">
-    <p class="era">1971–1975</p>
-    <h2>The Army Years – Part 4 - Now a Major</h2>
-    <p class="sub">Chronicling an Australian officer's early 1970s career transition, this document details his family's move and his attendance at Queenscliff's historic Staff College.</p>
-    
-    
-    <div class="meta"><span>29,018 words</span><span class="dot">·</span><span class="read">~2½ hr read</span><span class="arrow">Read →</span>
-    </div>
-    
-  </a>
   
 
   

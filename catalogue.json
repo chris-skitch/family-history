@@ -1,18 +1,6 @@
 {
   "entries": [
     {
-      "stem": "1933-1945_three-days-in-berlin",
-      "title": "THREE DAYS IN BERLIN",
-      "years": "1933–1945",
-      "description": "",
-      "url": "https://chris-skitch.github.io/family-history/rfs/1933-1945_three-days-in-berlin.html",
-      "subtitle": "",
-      "source": "generated",
-      "needs_description": true,
-      "word_count": 3672,
-      "published": ""
-    },
-    {
       "stem": "1934-1945_junior",
       "title": "Junior",
       "years": "1934–1945",
@@ -21,32 +9,32 @@
       "subtitle": "The boy I once knew but now remember",
       "source": "generated",
       "needs_description": true,
-      "word_count": 28916,
-      "published": "2026-06-12T18:54:13.364475+00:00"
+      "word_count": 25743,
+      "published": "2026-06-13T10:47:10.239226+00:00"
     },
     {
-      "stem": "1945-1955_the-years-between",
-      "title": "The Years Between",
-      "years": "1945–1955",
+      "stem": "1940-1955_the-year-between",
+      "title": "The Year Between",
+      "years": "1940–1955",
       "description": "",
-      "url": "https://chris-skitch.github.io/family-history/rfs/1945-1955_the-years-between.html",
-      "subtitle": "The story of a teenage boy and his mother.",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1940-1955_the-year-between.html",
+      "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 91733,
-      "published": "2026-06-09T13:38:28.068223+00:00"
+      "word_count": 91636,
+      "published": ""
     },
     {
-      "stem": "1953-1954_in-the-navy",
+      "stem": "1942-1954_national-service",
       "title": "In The Navy",
       "years": "1953–1954",
       "description": "",
-      "url": "https://chris-skitch.github.io/family-history/rfs/1953-1954_in-the-navy.html",
-      "subtitle": "A recollection of a unique although small chapter of my life when I undertook my National Service training in the Royal Australian Navy",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1942-1954_national-service.html",
+      "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 19941,
-      "published": "2026-06-09T13:46:01.537470+00:00"
+      "word_count": 19963,
+      "published": ""
     },
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
@@ -54,10 +42,10 @@
       "years": "1955–1962",
       "description": "",
       "url": "https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html",
-      "subtitle": "From rigorous basic training in Kapooka to the specialized field projects of the Survey Corps, this is the compelling journey of a young Australian soldier's rise through the ranks. Follow his path of discipline, sacrifice, and dedication as he navigates early military life to earn his commission as an army officer.",
+      "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 120722,
+      "word_count": 119261,
       "published": "2026-06-09T13:46:58.318748+00:00"
     },
     {
@@ -66,11 +54,11 @@
       "years": "1961–1969",
       "description": "",
       "url": "https://chris-skitch.github.io/family-history/rfs/1961-1969_the-army-years-part-2-being-an-officer.html",
-      "subtitle": "In mid-20th century Sydney, a service family navigates the era's housing market, contending with military relocation stipulations and societal aftermath of conflict.",
+      "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 41409,
-      "published": "2026-06-11T16:16:45.820479+00:00"
+      "word_count": 40598,
+      "published": "2026-06-09T19:13:12.382777+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -78,11 +66,11 @@
       "years": "1969–1972",
       "description": "",
       "url": "https://chris-skitch.github.io/family-history/rfs/1969-1972_the-army-year-part-3-singapore.html",
-      "subtitle": "A military family navigates the intricate logistics of an overseas posting to Singapore, meticulously preparing for their two-year assignment under mid-century Commonwealth administration.",
+      "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 48731,
-      "published": "2026-06-11T16:02:09.649636+00:00"
+      "word_count": 48600,
+      "published": "2026-06-09T18:47:58.400117+00:00"
     },
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
@@ -90,12 +78,24 @@
       "years": "1971–1975",
       "description": "",
       "url": "https://chris-skitch.github.io/family-history/rfs/1971-1975_the-army-years-part-4-now-a-major.html",
-      "subtitle": "Chronicling an Australian officer's early 1970s career transition, this document details his family's move and his attendance at Queenscliff's historic Staff College.",
+      "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 29018,
-      "published": "2026-06-11T16:16:48.192710+00:00"
+      "word_count": 28947,
+      "published": "2026-06-09T21:48:50.625781+00:00"
+    },
+    {
+      "stem": "1975-1981_the-army-years-part-5-in-command",
+      "title": "The Army Years - Part 5 - In Command",
+      "years": "1975–1981",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1975-1981_the-army-years-part-5-in-command.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 88092,
+      "published": ""
     }
   ],
-  "rebuilt": "2026-06-12T18:54:13.364475+00:00"
+  "rebuilt": "2026-06-13T10:47:10.239226+00:00"
 }
