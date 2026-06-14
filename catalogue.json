@@ -58,7 +58,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-06-14T20:54:01.777332+00:00"
+      "published": "2026-06-14T20:54:04.045022+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -69,8 +69,8 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 48592,
-      "published": "2026-06-14T20:04:22.944846+00:00"
+      "word_count": 48572,
+      "published": "2026-06-14T20:58:16.055296+00:00"
     },
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
@@ -97,5 +97,5 @@
       "published": "2026-06-14T20:08:38.690213+00:00"
     }
   ],
-  "rebuilt": "2026-06-14T20:54:01.777332+00:00"
+  "rebuilt": "2026-06-14T20:58:16.055296+00:00"
 }
