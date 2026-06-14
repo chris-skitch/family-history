@@ -10,7 +10,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-06-14T20:42:55.518977+00:00"
+      "published": "2026-06-14T20:42:57.851829+00:00"
     },
     {
       "stem": "1940-1955_the-years-between",
@@ -22,7 +22,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 91480,
-      "published": "2026-06-14T19:55:42.469704+00:00"
+      "published": "2026-06-14T20:45:15.107362+00:00"
     },
     {
       "stem": "1942-1954_national-service",
@@ -97,5 +97,5 @@
       "published": "2026-06-14T20:08:38.690213+00:00"
     }
   ],
-  "rebuilt": "2026-06-14T20:42:55.518977+00:00"
+  "rebuilt": "2026-06-14T20:45:15.107362+00:00"
 }
