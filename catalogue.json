@@ -10,7 +10,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-06-13T10:48:25.878095+00:00"
+      "published": "2026-06-14T20:42:55.518977+00:00"
     },
     {
       "stem": "1940-1955_the-years-between",
@@ -34,7 +34,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 19903,
-      "published": "2026-06-14T20:13:43.067759+00:00"
+      "published": "2026-06-14T20:13:45.439913+00:00"
     },
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
@@ -97,5 +97,5 @@
       "published": "2026-06-14T20:08:38.690213+00:00"
     }
   ],
-  "rebuilt": "2026-06-14T20:13:43.067759+00:00"
+  "rebuilt": "2026-06-14T20:42:55.518977+00:00"
 }
