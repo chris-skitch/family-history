@@ -10,19 +10,19 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-06-13T10:48:23.786172+00:00"
+      "published": "2026-06-13T10:48:25.878095+00:00"
     },
     {
-      "stem": "1940-1955_the-year-between",
-      "title": "The Year Between",
+      "stem": "1940-1955_the-years-between",
+      "title": "The Years Between",
       "years": "1940–1955",
       "description": "",
-      "url": "https://chris-skitch.github.io/family-history/rfs/1940-1955_the-year-between.html",
-      "subtitle": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1940-1955_the-years-between.html",
+      "subtitle": "The story of a teenage boy and his mother.",
       "source": "generated",
       "needs_description": true,
-      "word_count": 91636,
-      "published": ""
+      "word_count": 91480,
+      "published": "2026-06-14T19:55:37.301268+00:00"
     },
     {
       "stem": "1942-1954_national-service",
@@ -33,7 +33,7 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 19963,
+      "word_count": 19915,
       "published": ""
     },
     {
@@ -45,7 +45,7 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 119261,
+      "word_count": 119229,
       "published": "2026-06-09T13:46:58.318748+00:00"
     },
     {
@@ -57,7 +57,7 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 40598,
+      "word_count": 40875,
       "published": "2026-06-09T19:13:12.382777+00:00"
     },
     {
@@ -69,7 +69,7 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 48600,
+      "word_count": 48592,
       "published": "2026-06-09T18:47:58.400117+00:00"
     },
     {
@@ -81,7 +81,7 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 28947,
+      "word_count": 28941,
       "published": "2026-06-09T21:48:50.625781+00:00"
     },
     {
@@ -93,9 +93,9 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 88092,
+      "word_count": 82939,
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-13T10:48:23.786172+00:00"
+  "rebuilt": "2026-06-14T19:55:37.301268+00:00"
 }
