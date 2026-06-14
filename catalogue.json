@@ -46,7 +46,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-06-14T20:53:40.439134+00:00"
+      "published": "2026-06-14T20:53:42.913468+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
@@ -57,8 +57,8 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 40876,
-      "published": "2026-06-14T20:04:04.677698+00:00"
+      "word_count": 40875,
+      "published": "2026-06-14T20:54:01.777332+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -97,5 +97,5 @@
       "published": "2026-06-14T20:08:38.690213+00:00"
     }
   ],
-  "rebuilt": "2026-06-14T20:53:40.439134+00:00"
+  "rebuilt": "2026-06-14T20:54:01.777332+00:00"
 }
