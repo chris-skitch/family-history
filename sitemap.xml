@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chris-skitch.github.io/family-history/index.html</loc>
-    <lastmod>2026-06-17T13:58:08.877653+00:00</lastmod>
+    <lastmod>2026-06-18T12:18:33.653200+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html</loc>
-    <lastmod>2026-06-14T20:53:42.913468+00:00</lastmod>
+    <lastmod>2026-06-18T12:18:33.653200+00:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
@@ -32,8 +32,8 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://chris-skitch.github.io/family-history/rfs/1965-1967_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html</loc>
-    <lastmod>2026-06-17T13:58:08.877653+00:00</lastmod>
+    <loc>https://chris-skitch.github.io/family-history/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html</loc>
+    <lastmod>2026-06-17T13:58:11.393449+00:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
@@ -49,6 +49,26 @@
   <url>
     <loc>https://chris-skitch.github.io/family-history/rfs/1975-1981_the-army-years-part-5-in-command.html</loc>
     <lastmod>2026-06-15T15:01:05.468195+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://chris-skitch.github.io/family-history/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://chris-skitch.github.io/family-history/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://chris-skitch.github.io/family-history/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://chris-skitch.github.io/family-history/rfs/2004_three-days-in-berlin.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://chris-skitch.github.io/family-history/rfs/untitled.html</loc>
     <changefreq>yearly</changefreq>
   </url>
 </urlset>

@@ -46,7 +46,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-06-14T20:53:42.913468+00:00"
+      "published": "2026-06-18T12:18:33.653200+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
@@ -61,16 +61,16 @@
       "published": "2026-06-14T21:16:39.576550+00:00"
     },
     {
-      "stem": "1965-1967_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
+      "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
       "title": "War In Vietnam – A Surveyor’s Story - Part 1 - The Genesis",
-      "years": "1965–1967",
+      "years": "1965–1966",
       "description": "",
-      "url": "https://chris-skitch.github.io/family-history/rfs/1965-1967_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html",
       "subtitle": "Part 1 of 4 - The Royal Australian Survey Corps at Nui Dat in its first year",
       "source": "generated",
       "needs_description": true,
       "word_count": 25026,
-      "published": "2026-06-17T13:58:08.877653+00:00"
+      "published": "2026-06-17T13:58:11.393449+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -107,7 +107,67 @@
       "needs_description": true,
       "word_count": 82939,
       "published": "2026-06-15T15:01:05.468195+00:00"
+    },
+    {
+      "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
+      "title": "War In Vietnam – A Surveyor’s Story - Part 2 - A Developing Role",
+      "years": "1966",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 58422,
+      "published": ""
+    },
+    {
+      "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
+      "title": "War In Vietnam – A Surveyor’s Story - Part 3 - Established",
+      "years": "1967",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 22652,
+      "published": ""
+    },
+    {
+      "stem": "1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was",
+      "title": "War In Vietnam – A Surveyor’s Story - Part 4 - Vietnam It Was",
+      "years": "1967",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 4049,
+      "published": ""
+    },
+    {
+      "stem": "2004_three-days-in-berlin",
+      "title": "Three Days in Berlin",
+      "years": "2004",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/2004_three-days-in-berlin.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 9457,
+      "published": ""
+    },
+    {
+      "stem": "untitled",
+      "title": "Untitled",
+      "years": "",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/untitled.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 0,
+      "published": ""
     }
   ],
-  "rebuilt": "2026-06-17T13:58:08.877653+00:00"
+  "rebuilt": "2026-06-18T12:18:33.653200+00:00"
 }
