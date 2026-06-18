@@ -1,16 +1,6 @@
-# The Skitch Family Archive
+# Robert Francis Skitch
 
-This website preserves the original autobiographical writings of my father, Robert Francis "Bob" Skitch, complemented by a rich gallery of original photographs and sketches.
-
-I have published this collection to share his legacy - a deeply personal journey from a boy growing up in Western Australia to a Lieutenant Colonel commanding the Army Survey Regiment.
-
-His memoirs serve as both a detailed family history and a unique window into the evolution of Australian military mapping and post-war society
-
-The collection is divided into chronological chapters that chart the course of his life and career
-
-To make exploring my father's extensive memoirs as engaging and accessible as possible, I have uploaded the entire collection into a public Google NotebookLM project. NotebookLM is an AI-powered research assistant that acts as a personalised, interactive guide to this specific archive. Because it is grounded exclusively in the provided source documents, every answer it gives is drawn directly from my father's original words and experiences.
-
-👉 Start exploring the life of Robert F. Skitch on NotebookLM
+From a boyhood in the Collie coalfields to Lieutenant Colonel commanding the Army Survey Regiment — eleven memoirs spanning eight decades of Australian life.
 
 ## Documents
 
