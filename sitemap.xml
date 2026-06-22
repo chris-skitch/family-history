@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chris-skitch.github.io/family-history/index.html</loc>
-    <lastmod>2026-06-19T08:02:42.937682+00:00</lastmod>
+    <lastmod>2026-06-22T14:41:13.348354+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://chris-skitch.github.io/family-history/rfs/1934-1945_junior.html</loc>
-    <lastmod>2026-06-18T12:19:29.903708+00:00</lastmod>
+    <lastmod>2026-06-22T14:41:13.348354+00:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://chris-skitch.github.io/family-history/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html</loc>
-    <lastmod>2026-06-19T08:02:42.937682+00:00</lastmod>
+    <lastmod>2026-06-19T08:02:45.456543+00:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
@@ -52,6 +52,10 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
+    <loc>https://chris-skitch.github.io/family-history/rfs/1981-1990_the-public-servant.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
     <loc>https://chris-skitch.github.io/family-history/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html</loc>
     <changefreq>yearly</changefreq>
   </url>
@@ -65,10 +69,6 @@
   </url>
   <url>
     <loc>https://chris-skitch.github.io/family-history/rfs/2004_three-days-in-berlin.html</loc>
-    <changefreq>yearly</changefreq>
-  </url>
-  <url>
-    <loc>https://chris-skitch.github.io/family-history/rfs/untitled.html</loc>
     <changefreq>yearly</changefreq>
   </url>
 </urlset>

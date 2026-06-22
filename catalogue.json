@@ -10,7 +10,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-06-18T12:19:29.903708+00:00"
+      "published": "2026-06-22T14:41:13.348354+00:00"
     },
     {
       "stem": "1945-1955_the-years-between",
@@ -46,7 +46,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-06-19T08:02:42.937682+00:00"
+      "published": "2026-06-19T08:02:45.456543+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
@@ -109,6 +109,18 @@
       "published": "2026-06-15T15:01:05.468195+00:00"
     },
     {
+      "stem": "1981-1990_the-public-servant",
+      "title": "The Public Servant",
+      "years": "1981-1990",
+      "description": "",
+      "url": "https://chris-skitch.github.io/family-history/rfs/1981-1990_the-public-servant.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 70329,
+      "published": ""
+    },
+    {
       "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
       "title": "War In Vietnam – A Surveyor’s Story - Part 2 - A Developing Role",
       "years": "1966",
@@ -117,7 +129,7 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 58422,
+      "word_count": 56350,
       "published": ""
     },
     {
@@ -155,19 +167,7 @@
       "needs_description": true,
       "word_count": 9457,
       "published": ""
-    },
-    {
-      "stem": "untitled",
-      "title": "Untitled",
-      "years": "",
-      "description": "",
-      "url": "https://chris-skitch.github.io/family-history/rfs/untitled.html",
-      "subtitle": "",
-      "source": "generated",
-      "needs_description": true,
-      "word_count": 0,
-      "published": ""
     }
   ],
-  "rebuilt": "2026-06-19T08:02:42.937682+00:00"
+  "rebuilt": "2026-06-22T14:41:13.348354+00:00"
 }
