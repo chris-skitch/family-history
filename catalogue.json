@@ -50,12 +50,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-06-23T11:51:20.667086+00:00"
+      "published": "2026-06-23T11:51:23.348260+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
       "title": "The Army Years - Part 2 - Being an Officer",
-      "short_title": "",
+      "short_title": "Being an Officer",
       "years": "1961–1969",
       "description": "",
       "url": "https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html",
@@ -63,7 +63,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-06-23T10:44:06.668264+00:00"
+      "published": "2026-06-23T11:55:23.077636+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -183,5 +183,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T11:51:20.667086+00:00"
+  "rebuilt": "2026-06-23T11:55:23.077636+00:00"
 }
