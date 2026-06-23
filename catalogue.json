@@ -82,7 +82,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 48572,
-      "published": "2026-06-23T10:46:39.028699+00:00"
+      "published": "2026-06-23T10:46:41.478277+00:00"
     },
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
@@ -130,7 +130,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 56350,
-      "published": ""
+      "published": "2026-06-23T10:56:30.294487+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
@@ -169,5 +169,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T10:46:39.028699+00:00"
+  "rebuilt": "2026-06-23T10:56:30.294487+00:00"
 }
