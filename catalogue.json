@@ -58,7 +58,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-06-23T10:44:04.345294+00:00"
+      "published": "2026-06-23T10:44:06.668264+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -94,7 +94,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 28939,
-      "published": "2026-06-14T21:15:19.619207+00:00"
+      "published": "2026-06-23T10:44:13.818591+00:00"
     },
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
@@ -169,5 +169,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T10:44:04.345294+00:00"
+  "rebuilt": "2026-06-23T10:44:13.818591+00:00"
 }
