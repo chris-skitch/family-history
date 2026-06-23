@@ -50,7 +50,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-06-23T14:13:15.233238+00:00"
+      "published": "2026-06-23T14:13:17.888713+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
@@ -63,7 +63,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-06-23T11:55:25.447858+00:00"
+      "published": "2026-06-23T14:13:18.030247+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -183,5 +183,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T14:13:15.233238+00:00"
+  "rebuilt": "2026-06-23T14:13:18.030247+00:00"
 }
