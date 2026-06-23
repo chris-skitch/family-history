@@ -89,12 +89,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 48572,
-      "published": "2026-06-23T11:56:01.598821+00:00"
+      "published": "2026-06-23T11:56:03.949741+00:00"
     },
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
       "title": "The Army Years – Part 4 - Now a Major",
-      "short_title": "",
+      "short_title": "Now a Major",
       "years": "1971–1975",
       "description": "",
       "url": "https://history.skitch.me/rfs/1971-1975_the-army-years-part-4-now-a-major.html",
@@ -102,7 +102,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 28939,
-      "published": "2026-06-23T10:44:16.121460+00:00"
+      "published": "2026-06-23T11:56:15.127028+00:00"
     },
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
@@ -183,5 +183,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T11:56:01.598821+00:00"
+  "rebuilt": "2026-06-23T11:56:15.127028+00:00"
 }
