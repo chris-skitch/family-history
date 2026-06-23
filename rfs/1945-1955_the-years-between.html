@@ -4112,7 +4112,7 @@
 
   
   <footer>
-    <p>· The Skitch Family Archive · © Christopher M.R. Skitch. Licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> - read and share with attribution; no commercial use or adaptations.<br>Document processing (HTML + NotebookLM) by <a href="https://github.com/hold-shift/notebook-forge">Notebook Forge</a>.</p>
+    <p>· The Skitch Family Archive · © Christopher M.R. Skitch. Licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> - read and share with attribution; no commercial use or adaptations. Document processing (HTML + NotebookLM) by <a href="https://github.com/hold-shift/notebook-forge">Notebook Forge</a>.</p>
   </footer>
   
 
@@ -5007,8 +5007,8 @@
     <div class="tts-speedwrap">
       <span class="tts-splabel">Speed</span>
       <input type="range" class="tts-speed" id="ttsSpeed" min="0.75" max="1.75" step="0.05"
-             value="1.25" aria-label="Playback speed">
-      <button type="button" class="tts-chip" id="ttsChip" aria-label="Playback speed">1.25×</button>
+             value="1" aria-label="Playback speed">
+      <button type="button" class="tts-chip" id="ttsChip" aria-label="Playback speed">1×</button>
     </div>
     <span class="tts-resume" id="ttsResume">
       <button type="button" id="ttsResumeBtn">Resume</button>
@@ -5197,13 +5197,19 @@
     else if(e.key==='ArrowRight'){ audio.currentTime=Math.min(audio.duration||0,audio.currentTime+10); e.preventDefault(); } });
 
   // ---- speed (slider on desktop, tap-to-cycle chip on mobile) ----
-  var STEPS=[1,1.25,1.5,1.75];
-  function setSpeed(v){ v=Math.round(v*100)/100; audio.playbackRate=v; speed.value=v; chip.textContent=v+'×'; }
+  // Speed preference is remembered per visitor (one key across all documents),
+  // using the same localStorage mechanism as the resume marker. Default 1.0×.
+  var STEPS=[1,1.25,1.5,1.75], SPEED_KEY='tts_speed';
+  function setSpeed(v){
+    v=Math.round(v*100)/100; audio.playbackRate=v; speed.value=v; chip.textContent=v+'×';
+    try{ localStorage.setItem(SPEED_KEY, String(v)); }catch(_){}
+  }
+  function savedSpeed(){ var v; try{ v=parseFloat(localStorage.getItem(SPEED_KEY)); }catch(_){} return isFinite(v) ? v : 1.0; }
   speed.addEventListener('input', function(){ setSpeed(parseFloat(speed.value)); });
   chip.addEventListener('click', function(){ var i=STEPS.indexOf(Math.round(audio.playbackRate*100)/100);
     setSpeed(STEPS[(i+1)%STEPS.length]); });
-  audio.addEventListener('loadedmetadata', function(){ setSpeed(parseFloat(speed.value)); });
-  setSpeed(1.25);
+  audio.addEventListener('loadedmetadata', function(){ audio.playbackRate=parseFloat(speed.value)||1; });
+  setSpeed(savedSpeed());
 
   // ---- keyboard (space play/pause, ←/→ ±10s) ----
   document.addEventListener('keydown', function(e){
