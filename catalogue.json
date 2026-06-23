@@ -102,12 +102,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 28939,
-      "published": "2026-06-23T11:56:15.127028+00:00"
+      "published": "2026-06-23T11:56:17.457343+00:00"
     },
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
       "title": "The Army Years - Part 5 - In Command",
-      "short_title": "",
+      "short_title": "In Command",
       "years": "1975–1981",
       "description": "",
       "url": "https://history.skitch.me/rfs/1975-1981_the-army-years-part-5-in-command.html",
@@ -115,7 +115,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 82939,
-      "published": "2026-06-23T10:44:25.042499+00:00"
+      "published": "2026-06-23T11:56:40.635381+00:00"
     },
     {
       "stem": "1981-1990_the-public-servant",
@@ -183,5 +183,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T11:56:15.127028+00:00"
+  "rebuilt": "2026-06-23T11:56:40.635381+00:00"
 }
