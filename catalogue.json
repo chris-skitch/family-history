@@ -118,7 +118,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 70329,
-      "published": ""
+      "published": "2026-06-23T10:56:40.313301+00:00"
     },
     {
       "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
@@ -154,7 +154,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 4049,
-      "published": "2026-06-23T10:56:37.642143+00:00"
+      "published": "2026-06-23T10:56:40.031249+00:00"
     },
     {
       "stem": "2004_three-days-in-berlin",
@@ -169,5 +169,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T10:56:37.642143+00:00"
+  "rebuilt": "2026-06-23T10:56:40.313301+00:00"
 }
