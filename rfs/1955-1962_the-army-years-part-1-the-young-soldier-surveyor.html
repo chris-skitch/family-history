@@ -265,6 +265,18 @@
     color:var(--ink-faint);
     line-height:1.6;
   }
+  footer p{margin:0 0 .4rem;}
+  footer p:last-child{margin-bottom:0;}
+  /* Footer links read as quiet text, not the default blue — inherit the
+     muted footer colour, with a subtle underline and an accent on hover. */
+  footer a{
+    color:inherit;
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:.15em;
+    transition:color .15s ease;
+  }
+  footer a:hover{color:var(--accent);}
   footer .mark{font-family:"Fraunces",serif;color:var(--accent);font-weight:600;}
 
   /* ---- Reading nav: bottom prev/next (sits ABOVE the document footer) ---- */
@@ -560,6 +572,7 @@
   body.has-toc article h2, body.has-toc article h3{scroll-margin-top:1rem;}
 
 </style>
+<script defer src="https://analytics.y0d4.com/script.js" data-website-id="11e81002-4740-4bf0-a79d-db058bdbb143"></script>
 </head>
 <body class="has-toc">
 
@@ -5646,13 +5659,13 @@
   <nav class="docnav" aria-label="Document navigation">
     <a class="prev" href="https://history.skitch.me/rfs/1953-1954_in-the-navy.html"><div class="dir">← Previous</div><div class="nm">In The Navy</div></a>
     <a class="home" href="https://history.skitch.me/index.html">⌂ The Archive</a>
-    <a class="next" href="https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html"><div class="dir">Next →</div><div class="nm">The Army Years - Part 2 - Being an Officer</div></a>
+    <a class="next" href="https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html"><div class="dir">Next →</div><div class="nm">Being an Officer</div></a>
   </nav>
   
 
   
   <footer>
-    <p>© Christopher M.R. Skitch · The Skitch Family Archive · <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Licensed CC BY-NC-ND 4.0 — read and share with attribution; no commercial use or adaptations.</a></p>
+    <p>· The Skitch Family Archive · © Christopher M.R. Skitch. Licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> - read and share with attribution; no commercial use or adaptations.<br>Document processing (HTML + NotebookLM) by <a href="https://github.com/hold-shift/notebook-forge">Notebook Forge</a>.</p>
   </footer>
   
 
