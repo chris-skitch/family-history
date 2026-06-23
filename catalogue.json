@@ -68,7 +68,7 @@
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
       "title": "War In Vietnam – A Surveyor’s Story - Part 1 - The Genesis",
-      "short_title": "",
+      "short_title": "The Genesis",
       "years": "1965–1966",
       "description": "",
       "url": "https://history.skitch.me/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html",
@@ -76,7 +76,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25026,
-      "published": "2026-06-23T10:44:33.910775+00:00"
+      "published": "2026-06-23T11:57:04.192120+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -115,7 +115,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 82939,
-      "published": "2026-06-23T11:56:40.635381+00:00"
+      "published": "2026-06-23T11:56:43.177162+00:00"
     },
     {
       "stem": "1981-1990_the-public-servant",
@@ -183,5 +183,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T11:56:40.635381+00:00"
+  "rebuilt": "2026-06-23T11:57:04.192120+00:00"
 }
