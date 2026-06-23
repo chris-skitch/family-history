@@ -3,6 +3,7 @@
     {
       "stem": "1934-1945_junior",
       "title": "Junior",
+      "short_title": "",
       "years": "1934–1945",
       "description": "",
       "url": "https://history.skitch.me/rfs/1934-1945_junior.html",
@@ -15,6 +16,7 @@
     {
       "stem": "1945-1955_the-years-between",
       "title": "The Years Between",
+      "short_title": "",
       "years": "1945–1955",
       "description": "",
       "url": "https://history.skitch.me/rfs/1945-1955_the-years-between.html",
@@ -27,6 +29,7 @@
     {
       "stem": "1953-1954_in-the-navy",
       "title": "In The Navy",
+      "short_title": "",
       "years": "1953–1954",
       "description": "",
       "url": "https://history.skitch.me/rfs/1953-1954_in-the-navy.html",
@@ -39,6 +42,7 @@
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
       "title": "The Army Years - Part 1 - The Young Soldier Surveyor",
+      "short_title": "The Young Soldier Surveyor",
       "years": "1955–1962",
       "description": "",
       "url": "https://history.skitch.me/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html",
@@ -46,11 +50,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-06-23T10:43:58.314071+00:00"
+      "published": "2026-06-23T11:51:20.667086+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
       "title": "The Army Years - Part 2 - Being an Officer",
+      "short_title": "",
       "years": "1961–1969",
       "description": "",
       "url": "https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html",
@@ -63,6 +68,7 @@
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
       "title": "War In Vietnam – A Surveyor’s Story - Part 1 - The Genesis",
+      "short_title": "",
       "years": "1965–1966",
       "description": "",
       "url": "https://history.skitch.me/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html",
@@ -75,6 +81,7 @@
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
       "title": "The Army Years - Part 3 - Singapore",
+      "short_title": "",
       "years": "1969–1972",
       "description": "",
       "url": "https://history.skitch.me/rfs/1969-1972_the-army-year-part-3-singapore.html",
@@ -87,6 +94,7 @@
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
       "title": "The Army Years – Part 4 - Now a Major",
+      "short_title": "",
       "years": "1971–1975",
       "description": "",
       "url": "https://history.skitch.me/rfs/1971-1975_the-army-years-part-4-now-a-major.html",
@@ -99,6 +107,7 @@
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
       "title": "The Army Years - Part 5 - In Command",
+      "short_title": "",
       "years": "1975–1981",
       "description": "",
       "url": "https://history.skitch.me/rfs/1975-1981_the-army-years-part-5-in-command.html",
@@ -111,6 +120,7 @@
     {
       "stem": "1981-1990_the-public-servant",
       "title": "The Public Servant",
+      "short_title": "",
       "years": "1981-1990",
       "description": "",
       "url": "https://history.skitch.me/rfs/1981-1990_the-public-servant.html",
@@ -118,11 +128,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 70329,
-      "published": "2026-06-23T10:56:45.382479+00:00"
+      "published": ""
     },
     {
       "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
       "title": "War In Vietnam – A Surveyor’s Story - Part 2 - A Developing Role",
+      "short_title": "",
       "years": "1966",
       "description": "",
       "url": "https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html",
@@ -130,11 +141,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 56350,
-      "published": "2026-06-23T10:56:34.157439+00:00"
+      "published": ""
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
       "title": "War In Vietnam – A Surveyor’s Story - Part 3 - Established",
+      "short_title": "",
       "years": "1967",
       "description": "",
       "url": "https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html",
@@ -142,11 +154,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 22652,
-      "published": "2026-06-23T10:56:37.440623+00:00"
+      "published": ""
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was",
       "title": "War In Vietnam – A Surveyor’s Story - Part 4 - Vietnam It Was",
+      "short_title": "",
       "years": "1967",
       "description": "",
       "url": "https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html",
@@ -154,11 +167,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 4049,
-      "published": "2026-06-23T10:56:40.031249+00:00"
+      "published": ""
     },
     {
       "stem": "2004_three-days-in-berlin",
       "title": "Three Days in Berlin",
+      "short_title": "",
       "years": "2004",
       "description": "",
       "url": "https://history.skitch.me/rfs/2004_three-days-in-berlin.html",
@@ -166,8 +180,8 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 9457,
-      "published": "2026-06-23T10:56:45.758315+00:00"
+      "published": ""
     }
   ],
-  "rebuilt": "2026-06-23T10:56:45.758315+00:00"
+  "rebuilt": "2026-06-23T11:51:20.667086+00:00"
 }
