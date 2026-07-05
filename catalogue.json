@@ -115,7 +115,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 28939,
-      "published": "2026-07-05T05:31:44.576854+00:00"
+      "published": "2026-07-05T05:31:48.998453+00:00"
     },
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
@@ -124,11 +124,11 @@
       "years": "1975–1981",
       "description": "",
       "url": "https://history.skitch.me/rfs/1975-1981_the-army-years-part-5-in-command.html",
-      "subtitle": "",
+      "subtitle": "Squadron command in Brisbane, then the Army Survey Regiment at Bendigo — the summit of a soldiering life, and the decision to leave it.",
       "source": "generated",
       "needs_description": true,
       "word_count": 82939,
-      "published": "2026-06-26T15:35:54.609740+00:00"
+      "published": "2026-07-05T05:32:07.293997+00:00"
     },
     {
       "stem": "1981-1990_the-public-servant",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-07-05T05:31:44.576854+00:00"
+  "rebuilt": "2026-07-05T05:32:07.293997+00:00"
 }
