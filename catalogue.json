@@ -1,6 +1,19 @@
 {
   "entries": [
     {
+      "stem": "1930-1940_the-poetry-of-mabel-madeline-skitch-nee-magowan",
+      "title": "THE POETRY OF MABEL MADELINE SKITCH (nee Magowan)",
+      "short_title": "",
+      "years": "1930–1940",
+      "description": "",
+      "url": "https://history.skitch.me/rfs/1930-1940_the-poetry-of-mabel-madeline-skitch-nee-magowan.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 1860,
+      "published": ""
+    },
+    {
       "stem": "1934-1945_junior",
       "title": "Junior",
       "short_title": "",
@@ -127,8 +140,8 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 70329,
-      "published": ""
+      "word_count": 69781,
+      "published": "2026-07-05T03:31:06.000753+00:00"
     },
     {
       "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
@@ -140,7 +153,7 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 56350,
+      "word_count": 55352,
       "published": ""
     },
     {
@@ -183,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-06-26T15:35:54.683348+00:00"
+  "rebuilt": "2026-07-05T03:31:06.000753+00:00"
 }
