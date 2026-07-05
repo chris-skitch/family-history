@@ -50,7 +50,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 19903,
-      "published": "2026-07-05T05:28:05.857487+00:00"
+      "published": "2026-07-05T05:28:09.162091+00:00"
     },
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
@@ -59,11 +59,11 @@
       "years": "1955–1962",
       "description": "",
       "url": "https://history.skitch.me/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html",
-      "subtitle": "",
+      "subtitle": "Escaping the West for a surveyor's life — seven years in the field, from New Ireland to the Northern Territory, ending with a commission and a bride.",
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-06-26T15:35:42.528781+00:00"
+      "published": "2026-07-05T05:30:40.436473+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-07-05T05:28:05.857487+00:00"
+  "rebuilt": "2026-07-05T05:30:40.436473+00:00"
 }
