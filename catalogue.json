@@ -63,7 +63,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-07-05T05:30:40.436473+00:00"
+      "published": "2026-07-05T05:30:43.877090+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
@@ -72,11 +72,11 @@
       "years": "1961–1969",
       "description": "",
       "url": "https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html",
-      "subtitle": "",
+      "subtitle": "Newly married and newly commissioned — learning the craft of soldiering and surveying in Brisbane and the far north of Queensland.",
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-06-26T15:35:44.892314+00:00"
+      "published": "2026-07-05T05:30:59.474880+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-07-05T05:30:40.436473+00:00"
+  "rebuilt": "2026-07-05T05:30:59.474880+00:00"
 }
