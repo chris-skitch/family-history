@@ -76,7 +76,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-07-05T05:30:59.474880+00:00"
+      "published": "2026-07-05T05:31:04.368204+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -98,11 +98,11 @@
       "years": "1969–1972",
       "description": "",
       "url": "https://history.skitch.me/rfs/1969-1972_the-army-year-part-3-singapore.html",
-      "subtitle": "",
+      "subtitle": "Two years with the 84th Survey Squadron Royal Engineers — family life at 94 University Road, and a Singapore that has since vanished.",
       "source": "generated",
       "needs_description": true,
       "word_count": 48572,
-      "published": "2026-06-26T15:35:49.799331+00:00"
+      "published": "2026-07-05T05:31:28.532413+00:00"
     },
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-07-05T05:30:59.474880+00:00"
+  "rebuilt": "2026-07-05T05:31:28.532413+00:00"
 }
