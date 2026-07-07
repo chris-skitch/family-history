@@ -37,7 +37,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 91480,
-      "published": "2026-07-06T00:26:53.421359+00:00"
+      "published": "2026-07-06T00:26:57.853826+00:00"
     },
     {
       "stem": "1953-1954_in-the-navy",
@@ -146,15 +146,15 @@
     {
       "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
       "title": "War In Vietnam – A Surveyor’s Story - Part 2 - A Developing Role",
-      "short_title": "",
+      "short_title": "A Developing Role",
       "years": "1966",
       "description": "",
       "url": "https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html",
-      "subtitle": "",
+      "subtitle": "Part 2 of 4 – Sixteen soldiers mapping a province: the survey role takes shape at Nui Dat.",
       "source": "generated",
       "needs_description": true,
-      "word_count": 55352,
-      "published": ""
+      "word_count": 54113,
+      "published": "2026-07-07T04:56:03.583824+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-07-06T00:26:53.421359+00:00"
+  "rebuilt": "2026-07-07T04:56:03.583824+00:00"
 }
