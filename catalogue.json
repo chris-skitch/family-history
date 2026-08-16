@@ -76,7 +76,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-08-16T22:18:17.437752+00:00"
+      "published": "2026-08-16T22:18:23.187682+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -89,7 +89,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25026,
-      "published": "2026-08-16T22:11:51.671078+00:00"
+      "published": "2026-08-16T22:18:24.805810+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-16T22:18:17.437752+00:00"
+  "rebuilt": "2026-08-16T22:18:24.805810+00:00"
 }
