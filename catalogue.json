@@ -50,7 +50,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 19903,
-      "published": "2026-08-16T22:18:01.227642+00:00"
+      "published": "2026-08-16T22:18:08.261964+00:00"
     },
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
@@ -63,7 +63,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119229,
-      "published": "2026-08-16T22:11:33.885203+00:00"
+      "published": "2026-08-16T22:18:09.560331+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-16T22:18:01.227642+00:00"
+  "rebuilt": "2026-08-16T22:18:09.560331+00:00"
 }
