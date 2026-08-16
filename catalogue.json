@@ -115,7 +115,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 28939,
-      "published": "2026-08-16T22:12:01.981371+00:00"
+      "published": "2026-08-16T22:12:05.714451+00:00"
     },
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
@@ -128,7 +128,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 82939,
-      "published": "2026-08-16T22:04:03.020905+00:00"
+      "published": "2026-08-16T22:12:11.893484+00:00"
     },
     {
       "stem": "1981-1990_the-public-servant",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-16T22:12:01.981371+00:00"
+  "rebuilt": "2026-08-16T22:12:11.893484+00:00"
 }
