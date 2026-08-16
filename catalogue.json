@@ -89,7 +89,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25026,
-      "published": "2026-08-16T22:11:38.503886+00:00"
+      "published": "2026-08-16T22:11:51.671078+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -154,7 +154,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 54113,
-      "published": "2026-08-16T22:03:54.245228+00:00"
+      "published": "2026-08-16T22:11:52.818429+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-16T22:11:38.503886+00:00"
+  "rebuilt": "2026-08-16T22:11:52.818429+00:00"
 }
