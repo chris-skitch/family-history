@@ -128,7 +128,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 82939,
-      "published": "2026-08-16T22:04:00.433666+00:00"
+      "published": "2026-08-16T22:04:03.020905+00:00"
     },
     {
       "stem": "1981-1990_the-public-servant",
@@ -141,7 +141,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 69781,
-      "published": "2026-07-05T22:07:47.397710+00:00"
+      "published": "2026-08-16T22:04:03.211790+00:00"
     },
     {
       "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-16T22:04:00.433666+00:00"
+  "rebuilt": "2026-08-16T22:04:03.211790+00:00"
 }
