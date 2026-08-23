@@ -63,7 +63,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119227,
-      "published": "2026-08-23T13:29:59.642325+00:00"
+      "published": "2026-08-23T13:30:02.698741+00:00"
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
@@ -115,7 +115,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 28939,
-      "published": "2026-08-16T22:18:52.787663+00:00"
+      "published": "2026-08-23T13:57:50.079791+00:00"
     },
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-23T13:29:59.642325+00:00"
+  "rebuilt": "2026-08-23T13:57:50.079791+00:00"
 }
