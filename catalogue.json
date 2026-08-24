@@ -24,7 +24,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-08-16T22:17:51.159249+00:00"
+      "published": "2026-08-24T07:35:20.270569+00:00"
     },
     {
       "stem": "1945-1955_the-years-between",
@@ -128,7 +128,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 82939,
-      "published": "2026-08-23T18:21:38.750646+00:00"
+      "published": "2026-08-23T18:21:41.984881+00:00"
     },
     {
       "stem": "1981-1990_the-public-servant",
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-23T18:21:38.750646+00:00"
+  "rebuilt": "2026-08-24T07:35:20.270569+00:00"
 }
