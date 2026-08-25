@@ -89,7 +89,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-08-25T19:44:34.336123+00:00"
+      "published": "2026-08-25T19:44:40.896931+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -102,7 +102,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25026,
-      "published": "2026-08-24T07:35:38.640950+00:00"
+      "published": "2026-08-25T19:44:41.060312+00:00"
     },
     {
       "stem": "1966-1967_microsoft-word-annex-n-hmas-sydney-to-vn-doc",
@@ -222,5 +222,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T19:44:34.336123+00:00"
+  "rebuilt": "2026-08-25T19:44:41.060312+00:00"
 }
