@@ -102,7 +102,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25026,
-      "published": "2026-08-25T21:52:44.378629+00:00"
+      "published": "2026-08-25T21:52:50.969143+00:00"
     },
     {
       "stem": "1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam",
@@ -115,7 +115,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 1557,
-      "published": "2026-08-25T21:46:11.502788+00:00"
+      "published": "2026-08-25T21:52:51.151547+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -248,5 +248,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T21:52:44.378629+00:00"
+  "rebuilt": "2026-08-25T21:52:51.151547+00:00"
 }
