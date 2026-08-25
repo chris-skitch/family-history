@@ -193,7 +193,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 21668,
-      "published": "2026-08-25T19:44:46.805573+00:00"
+      "published": "2026-08-25T19:44:49.407314+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was",
@@ -206,7 +206,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 3421,
-      "published": "2026-08-25T19:39:23.997877+00:00"
+      "published": "2026-08-25T19:44:49.613144+00:00"
     },
     {
       "stem": "2004_three-days-in-berlin",
@@ -222,5 +222,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T19:44:46.805573+00:00"
+  "rebuilt": "2026-08-25T19:44:49.613144+00:00"
 }
