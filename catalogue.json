@@ -128,7 +128,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 48572,
-      "published": "2026-08-25T19:45:00.361822+00:00"
+      "published": "2026-08-25T21:44:20.192355+00:00"
     },
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
@@ -206,7 +206,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 3421,
-      "published": "2026-08-25T21:44:17.297848+00:00"
+      "published": "2026-08-25T21:44:19.955466+00:00"
     },
     {
       "stem": "2004_three-days-in-berlin",
@@ -248,5 +248,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T21:44:17.297848+00:00"
+  "rebuilt": "2026-08-25T21:44:20.192355+00:00"
 }
