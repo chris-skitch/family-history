@@ -105,16 +105,16 @@
       "published": "2026-08-25T19:44:43.727249+00:00"
     },
     {
-      "stem": "1966-1967_microsoft-word-annex-n-hmas-sydney-to-vn-doc",
-      "title": "Microsoft Word - ANNEX N - HMAS Sydney to VN.doc",
+      "stem": "1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam",
+      "title": "Annex N - A Sea Voyage To South Vietnam",
       "short_title": "",
       "years": "1966–1967",
       "description": "",
-      "url": "https://history.skitch.me/rfs/1966-1967_microsoft-word-annex-n-hmas-sydney-to-vn-doc.html",
-      "subtitle": "",
+      "url": "https://history.skitch.me/rfs/1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam.html",
+      "subtitle": "A Sea Voyage To South Vietnam On The Good Ship Hmas Sydney",
       "source": "generated",
       "needs_description": true,
-      "word_count": 1592,
+      "word_count": 1557,
       "published": ""
     },
     {
@@ -220,7 +220,33 @@
       "needs_description": true,
       "word_count": 9457,
       "published": ""
+    },
+    {
+      "stem": "annex-a-to-m",
+      "title": "Annexes A to M",
+      "short_title": "",
+      "years": "1966–67",
+      "description": "",
+      "url": "https://history.skitch.me/rfs/annex-a-to-m.html",
+      "subtitle": "Thirteen letters, operation orders, routine orders and survey diagrams from Nui Dat, kept from his own collection and re-set from the carbon copies.",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 100,
+      "published": "2026-08-25T21:41:38.604814+00:00"
+    },
+    {
+      "stem": "untitled",
+      "title": "Untitled",
+      "short_title": "",
+      "years": "",
+      "description": "",
+      "url": "https://history.skitch.me/rfs/untitled.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 4,
+      "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T19:45:10.901518+00:00"
+  "rebuilt": "2026-08-25T21:41:38.604814+00:00"
 }
