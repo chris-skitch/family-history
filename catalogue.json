@@ -50,7 +50,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 19903,
-      "published": "2026-08-25T14:26:16.924101+00:00"
+      "published": "2026-08-24T07:35:29.113171+00:00"
     },
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
@@ -153,8 +153,8 @@
       "subtitle": "Part 2 of 4 – Sixteen soldiers mapping a province: the survey role takes shape at Nui Dat.",
       "source": "generated",
       "needs_description": true,
-      "word_count": 54113,
-      "published": "2026-08-24T07:35:41.768474+00:00"
+      "word_count": 54090,
+      "published": "2026-08-25T16:08:58.863133+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
@@ -166,7 +166,7 @@
       "subtitle": "",
       "source": "generated",
       "needs_description": true,
-      "word_count": 22652,
+      "word_count": 22004,
       "published": ""
     },
     {
@@ -196,5 +196,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T14:26:16.924101+00:00"
+  "rebuilt": "2026-08-25T16:08:58.863133+00:00"
 }
