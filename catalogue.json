@@ -50,7 +50,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 19903,
-      "published": "2026-08-25T21:43:57.782403+00:00"
+      "published": "2026-08-25T21:44:01.728665+00:00"
     },
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
@@ -89,7 +89,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-08-25T19:44:40.896931+00:00"
+      "published": "2026-08-25T21:44:05.035924+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -248,5 +248,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T21:43:57.782403+00:00"
+  "rebuilt": "2026-08-25T21:44:05.035924+00:00"
 }
