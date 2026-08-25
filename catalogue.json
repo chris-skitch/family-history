@@ -24,7 +24,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-08-25T21:43:50.643538+00:00"
+      "published": "2026-08-25T21:52:25.349733+00:00"
     },
     {
       "stem": "1945-1955_the-years-between",
@@ -115,7 +115,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 1557,
-      "published": "2026-08-25T21:46:06.040619+00:00"
+      "published": "2026-08-25T21:46:11.502788+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -248,5 +248,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T21:46:06.040619+00:00"
+  "rebuilt": "2026-08-25T21:52:25.349733+00:00"
 }
