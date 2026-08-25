@@ -24,7 +24,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-08-25T21:52:31.976446+00:00"
+      "published": "2026-08-25T22:08:25.365844+00:00"
     },
     {
       "stem": "1945-1955_the-years-between",
@@ -118,6 +118,45 @@
       "published": "2026-08-25T21:52:57.853477+00:00"
     },
     {
+      "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
+      "title": "War In Vietnam – A Surveyor’s Story - Part 2 - A Developing Role",
+      "short_title": "A Developing Role",
+      "years": "1966",
+      "description": "",
+      "url": "https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html",
+      "subtitle": "Part 2 of 4 – Sixteen soldiers mapping a province: the survey role takes shape at Nui Dat.",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 54090,
+      "published": "2026-08-25T21:53:02.719173+00:00"
+    },
+    {
+      "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
+      "title": "War In Vietnam – A Surveyor’s Story - Part 3 - Established",
+      "short_title": "Established",
+      "years": "1967",
+      "description": "",
+      "url": "https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 21668,
+      "published": "2026-08-25T21:53:09.493176+00:00"
+    },
+    {
+      "stem": "1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was",
+      "title": "War In Vietnam – A Surveyor’s Story - Part 4 - Vietnam It Was",
+      "short_title": "Vietnam It Was",
+      "years": "1967",
+      "description": "",
+      "url": "https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html",
+      "subtitle": "",
+      "source": "generated",
+      "needs_description": true,
+      "word_count": 3421,
+      "published": "2026-08-25T21:53:12.340356+00:00"
+    },
+    {
       "stem": "1969-1972_the-army-year-part-3-singapore",
       "title": "The Army Years - Part 3 - Singapore",
       "short_title": "Singapore",
@@ -170,45 +209,6 @@
       "published": "2026-08-25T21:53:30.622189+00:00"
     },
     {
-      "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
-      "title": "War In Vietnam – A Surveyor’s Story - Part 2 - A Developing Role",
-      "short_title": "A Developing Role",
-      "years": "1966",
-      "description": "",
-      "url": "https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html",
-      "subtitle": "Part 2 of 4 – Sixteen soldiers mapping a province: the survey role takes shape at Nui Dat.",
-      "source": "generated",
-      "needs_description": true,
-      "word_count": 54090,
-      "published": "2026-08-25T21:53:02.719173+00:00"
-    },
-    {
-      "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
-      "title": "War In Vietnam – A Surveyor’s Story - Part 3 - Established",
-      "short_title": "Established",
-      "years": "1967",
-      "description": "",
-      "url": "https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html",
-      "subtitle": "",
-      "source": "generated",
-      "needs_description": true,
-      "word_count": 21668,
-      "published": "2026-08-25T21:53:09.493176+00:00"
-    },
-    {
-      "stem": "1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was",
-      "title": "War In Vietnam – A Surveyor’s Story - Part 4 - Vietnam It Was",
-      "short_title": "Vietnam It Was",
-      "years": "1967",
-      "description": "",
-      "url": "https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html",
-      "subtitle": "",
-      "source": "generated",
-      "needs_description": true,
-      "word_count": 3421,
-      "published": "2026-08-25T21:53:12.340356+00:00"
-    },
-    {
       "stem": "2004_three-days-in-berlin",
       "title": "Three Days in Berlin",
       "short_title": "",
@@ -248,5 +248,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T21:53:33.725894+00:00"
+  "rebuilt": "2026-08-25T22:08:25.365844+00:00"
 }

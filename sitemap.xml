@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://history.skitch.me/</loc>
-    <lastmod>2026-08-25T21:53:33.725894+00:00</lastmod>
+    <lastmod>2026-08-25T22:08:25.365844+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://history.skitch.me/rfs/1934-1945_junior.html</loc>
-    <lastmod>2026-08-25T21:52:31.976446+00:00</lastmod>
+    <lastmod>2026-08-25T22:08:25.365844+00:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
@@ -42,6 +42,21 @@
     <changefreq>yearly</changefreq>
   </url>
   <url>
+    <loc>https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html</loc>
+    <lastmod>2026-08-25T21:53:02.719173+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html</loc>
+    <lastmod>2026-08-25T21:53:09.493176+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html</loc>
+    <lastmod>2026-08-25T21:53:12.340356+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
     <loc>https://history.skitch.me/rfs/1969-1972_the-army-year-part-3-singapore.html</loc>
     <lastmod>2026-08-25T21:53:15.164538+00:00</lastmod>
     <changefreq>yearly</changefreq>
@@ -59,21 +74,6 @@
   <url>
     <loc>https://history.skitch.me/rfs/1981-1990_the-public-servant.html</loc>
     <lastmod>2026-08-25T21:53:30.622189+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-  </url>
-  <url>
-    <loc>https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html</loc>
-    <lastmod>2026-08-25T21:53:02.719173+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-  </url>
-  <url>
-    <loc>https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html</loc>
-    <lastmod>2026-08-25T21:53:09.493176+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-  </url>
-  <url>
-    <loc>https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html</loc>
-    <lastmod>2026-08-25T21:53:12.340356+00:00</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
