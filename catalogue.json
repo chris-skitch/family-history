@@ -63,7 +63,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 119227,
-      "published": "2026-08-25T19:44:31.118474+00:00"
+      "published": "2026-08-25T19:44:34.136063+00:00"
     },
     {
       "stem": "1960-1967_war-in-vietnam-a-surveyors-story-annexs",
@@ -89,7 +89,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 40875,
-      "published": "2026-08-24T07:35:35.728977+00:00"
+      "published": "2026-08-25T19:44:34.336123+00:00"
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
@@ -222,5 +222,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-08-25T19:44:31.118474+00:00"
+  "rebuilt": "2026-08-25T19:44:34.336123+00:00"
 }
