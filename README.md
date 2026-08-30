@@ -5,7 +5,7 @@
 
 A living collection of family history — stories, records, and memories gathered from letters, photographs, and the recollections of those who lived them.
 
-### 📖 Read the archive → **<https://chris-skitch.github.io/family-history/>**
+### 📖 Read the archive → **<https://history.skitch.me/>**
 
 ---
 
