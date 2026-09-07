@@ -128,7 +128,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 54090,
-      "published": "2026-09-07T11:33:21.301596+00:00"
+      "published": "2026-09-07T11:33:24.378756+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
@@ -141,7 +141,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 21668,
-      "published": "2026-08-26T14:22:21.594406+00:00"
+      "published": "2026-09-07T11:33:24.547870+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was",
@@ -248,5 +248,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-09-07T11:33:21.301596+00:00"
+  "rebuilt": "2026-09-07T11:33:24.547870+00:00"
 }
