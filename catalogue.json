@@ -141,7 +141,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 21668,
-      "published": "2026-09-07T11:33:24.547870+00:00"
+      "published": "2026-09-07T11:33:27.651765+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was",
@@ -154,7 +154,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 3421,
-      "published": "2026-08-25T22:41:51.746998+00:00"
+      "published": "2026-09-07T11:33:27.825266+00:00"
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
@@ -248,5 +248,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-09-07T11:33:24.547870+00:00"
+  "rebuilt": "2026-09-07T11:33:27.825266+00:00"
 }
