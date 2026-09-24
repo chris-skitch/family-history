@@ -26,7 +26,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-09-24T10:59:05.256917+00:00"
+      "published": "2026-09-24T10:59:08.967386+00:00"
     },
     {
       "stem": "1945-1955_the-years-between",
@@ -40,7 +40,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 91480,
-      "published": "2026-09-07T12:47:08.604926+00:00"
+      "published": "2026-09-24T10:59:09.397950+00:00"
     },
     {
       "stem": "1953-1954_in-the-navy",
@@ -267,5 +267,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-09-24T10:59:05.256917+00:00"
+  "rebuilt": "2026-09-24T10:59:09.397950+00:00"
 }
