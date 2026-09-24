@@ -124,7 +124,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 1557,
-      "published": "2026-09-24T11:23:30.275420+00:00"
+      "published": "2026-09-24T11:23:33.093474+00:00"
     },
     {
       "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
@@ -138,7 +138,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 54090,
-      "published": "2026-09-24T10:59:32.076094+00:00"
+      "published": "2026-09-24T11:23:33.335058+00:00"
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
@@ -267,5 +267,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-09-24T11:23:30.275420+00:00"
+  "rebuilt": "2026-09-24T11:23:33.335058+00:00"
 }
