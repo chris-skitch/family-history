@@ -208,7 +208,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 82939,
-      "published": "2026-09-24T11:23:49.720786+00:00"
+      "published": "2026-09-24T11:23:52.910029+00:00"
     },
     {
       "stem": "1981-1990_the-public-servant",
@@ -222,7 +222,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 69781,
-      "published": "2026-09-24T10:59:51.069163+00:00"
+      "published": "2026-09-24T11:23:53.144505+00:00"
     },
     {
       "stem": "2004_three-days-in-berlin",
@@ -267,5 +267,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-09-24T11:23:49.720786+00:00"
+  "rebuilt": "2026-09-24T11:23:53.144505+00:00"
 }
