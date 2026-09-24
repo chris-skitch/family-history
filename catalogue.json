@@ -180,7 +180,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 48572,
-      "published": "2026-09-24T11:23:43.191650+00:00"
+      "published": "2026-09-24T11:23:46.149910+00:00"
     },
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
@@ -194,7 +194,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 28939,
-      "published": "2026-09-24T10:59:44.889881+00:00"
+      "published": "2026-09-24T11:23:46.342733+00:00"
     },
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
@@ -267,5 +267,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-09-24T11:23:43.191650+00:00"
+  "rebuilt": "2026-09-24T11:23:46.342733+00:00"
 }
