@@ -3,6 +3,7 @@
     {
       "stem": "1930-1940_the-poetry-of-mabel-madeline-skitch-nee-magowan",
       "title": "THE POETRY OF MABEL MADELINE SKITCH (nee Magowan)",
+      "full_title": "THE POETRY OF MABEL MADELINE SKITCH (nee Magowan)",
       "short_title": "",
       "years": "1930–1940",
       "description": "",
@@ -16,6 +17,7 @@
     {
       "stem": "1934-1945_junior",
       "title": "Junior",
+      "full_title": "Junior",
       "short_title": "",
       "years": "1934–1945",
       "description": "",
@@ -24,11 +26,12 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 25742,
-      "published": "2026-09-07T12:47:05.543809+00:00"
+      "published": "2026-09-24T10:59:05.256917+00:00"
     },
     {
       "stem": "1945-1955_the-years-between",
       "title": "The Years Between",
+      "full_title": "The Years Between",
       "short_title": "",
       "years": "1945–1955",
       "description": "",
@@ -42,6 +45,7 @@
     {
       "stem": "1953-1954_in-the-navy",
       "title": "In The Navy",
+      "full_title": "In The Navy",
       "short_title": "",
       "years": "1953–1954",
       "description": "",
@@ -54,7 +58,8 @@
     },
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
-      "title": "The Army Years - Part 1 - The Young Soldier Surveyor",
+      "title": "Part 1 - The Young Soldier Surveyor",
+      "full_title": "The Army Years - Part 1 - The Young Soldier Surveyor",
       "short_title": "The Young Soldier Surveyor",
       "years": "1955–1962",
       "description": "",
@@ -68,6 +73,7 @@
     {
       "stem": "1960-1967_war-in-vietnam-a-surveyors-story-annexs",
       "title": "War In Vietnam – A Surveyor’s Story - Annexes",
+      "full_title": "War In Vietnam – A Surveyor’s Story - Annexes",
       "short_title": "Annexs A - N",
       "years": "1960–1967",
       "description": "",
@@ -80,7 +86,8 @@
     },
     {
       "stem": "1961-1969_the-army-years-part-2-being-an-officer",
-      "title": "The Army Years - Part 2 - Being an Officer",
+      "title": "Part 2 - Being an Officer",
+      "full_title": "The Army Years - Part 2 - Being an Officer",
       "short_title": "Being an Officer",
       "years": "1961–1969",
       "description": "",
@@ -93,7 +100,8 @@
     },
     {
       "stem": "1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis",
-      "title": "War In Vietnam – A Surveyor’s Story - Part 1 - The Genesis",
+      "title": "Part 1 - The Genesis",
+      "full_title": "War in Vietnam - A Surveyor’s Story - Part 1 - The Genesis",
       "short_title": "The Genesis",
       "years": "1965–1966",
       "description": "",
@@ -107,6 +115,7 @@
     {
       "stem": "1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam",
       "title": "Annex N - A Sea Voyage To South Vietnam",
+      "full_title": "Annex N - A Sea Voyage To South Vietnam",
       "short_title": "",
       "years": "1966–1967",
       "description": "",
@@ -119,7 +128,8 @@
     },
     {
       "stem": "1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role",
-      "title": "War In Vietnam – A Surveyor’s Story - Part 2 - A Developing Role",
+      "title": "Part 2 - A Developing Role",
+      "full_title": "War in Vietnam - A Surveyor’s Story - Part 2 - A Developing Role",
       "short_title": "A Developing Role",
       "years": "1966",
       "description": "",
@@ -132,7 +142,8 @@
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-3-established",
-      "title": "War In Vietnam – A Surveyor’s Story - Part 3 - Established",
+      "title": "Part 3 - Established",
+      "full_title": "War in Vietnam - A Surveyor’s Story - Part 3 - Established",
       "short_title": "Established",
       "years": "1967",
       "description": "",
@@ -145,7 +156,8 @@
     },
     {
       "stem": "1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was",
-      "title": "War In Vietnam – A Surveyor’s Story - Part 4 - Vietnam It Was",
+      "title": "Part 4 - Vietnam It Was",
+      "full_title": "War in Vietnam - A Surveyor’s Story - Part 4 - Vietnam It Was",
       "short_title": "Vietnam It Was",
       "years": "1967",
       "description": "",
@@ -158,7 +170,8 @@
     },
     {
       "stem": "1969-1972_the-army-year-part-3-singapore",
-      "title": "The Army Years - Part 3 - Singapore",
+      "title": "Part 3 - Singapore",
+      "full_title": "The Army Years - Part 3 - Singapore",
       "short_title": "Singapore",
       "years": "1969–1972",
       "description": "",
@@ -171,7 +184,8 @@
     },
     {
       "stem": "1971-1975_the-army-years-part-4-now-a-major",
-      "title": "The Army Years – Part 4 - Now a Major",
+      "title": "Part 4 - Now a Major",
+      "full_title": "The Army Years - Part 4 - Now a Major",
       "short_title": "Now a Major",
       "years": "1971–1975",
       "description": "",
@@ -184,7 +198,8 @@
     },
     {
       "stem": "1975-1981_the-army-years-part-5-in-command",
-      "title": "The Army Years - Part 5 - In Command",
+      "title": "Part 5 - In Command",
+      "full_title": "The Army Years - Part 5 - In Command",
       "short_title": "In Command",
       "years": "1975–1981",
       "description": "",
@@ -198,6 +213,7 @@
     {
       "stem": "1981-1990_the-public-servant",
       "title": "The Public Servant",
+      "full_title": "The Public Servant",
       "short_title": "",
       "years": "1981-1990",
       "description": "",
@@ -211,6 +227,7 @@
     {
       "stem": "2004_three-days-in-berlin",
       "title": "Three Days in Berlin",
+      "full_title": "Three Days in Berlin",
       "short_title": "",
       "years": "2004",
       "description": "",
@@ -224,6 +241,7 @@
     {
       "stem": "annex-a-to-m",
       "title": "Annexes A to M",
+      "full_title": "Annexes A to M",
       "short_title": "",
       "years": "1966–67",
       "description": "",
@@ -237,6 +255,7 @@
     {
       "stem": "untitled",
       "title": "Untitled",
+      "full_title": "Untitled",
       "short_title": "",
       "years": "",
       "description": "",
@@ -248,5 +267,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-09-07T12:47:47.412716+00:00"
+  "rebuilt": "2026-09-24T10:59:05.256917+00:00"
 }

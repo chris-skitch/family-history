@@ -60,6 +60,8 @@
   .cta-title { font-family: system-ui, sans-serif; font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
   .cta-sub { font-family: system-ui, sans-serif; font-size: 12px; color: var(--ink-tertiary); }
   .cta-arrow { font-size: 18px; color: var(--khaki-mid); margin-left: auto; flex-shrink: 0; }
+  /* AI sparkle on the Gemini Notebook call-to-action. */
+  .cta-spark { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%; background: var(--bg); border: 1px solid var(--rule); color: var(--khaki); }
 
   .section-label { font-family: system-ui, sans-serif; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-tertiary); margin-bottom: 1.25rem; }
   .timeline { position: relative; padding-left: 1.75rem; }
@@ -86,9 +88,13 @@
   .closing p:last-of-type { margin-bottom: 0; }
   .closing-col h3 { font-family: system-ui, sans-serif; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--khaki); margin-bottom: .85rem; }
   .notebooklm-features { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-  .notebooklm-features li { font-family: system-ui, sans-serif; font-size: 13px; color: var(--ink-secondary); display: flex; align-items: baseline; gap: 8px; line-height: 1.5; }
+  /* Same serif, size and colour as the closing paragraphs above the list. */
+  .notebooklm-features li { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; color: var(--ink-secondary); display: flex; align-items: baseline; gap: 8px; line-height: 1.7; }
   .notebooklm-features li::before { content: '—'; color: var(--khaki-mid); flex-shrink: 0; }
   .signoff { font-style: italic; font-size: 15px; color: var(--ink-tertiary); margin-top: 1.5rem; }
+  .signoff-link { color: inherit; text-decoration: underline; text-decoration-color: var(--khaki-mid); text-underline-offset: .18em; }
+  .signoff-link:hover { color: var(--khaki); }
+  .signoff-link .li { display: inline-block; vertical-align: -1px; margin-left: 6px; color: var(--khaki); }
 
   footer { font-family: system-ui, sans-serif; font-size: 11px; color: var(--ink-tertiary); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); line-height: 1.7; }
   footer p { margin: 0 0 .4rem; }
@@ -101,20 +107,55 @@
     .closing-grid { grid-template-columns: 1fr; }
   }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWorkSeries","@id":"https://history.skitch.me/#collection","name":"Robert Francis Skitch","url":"https://history.skitch.me/","description":"From a boyhood in the Collie coalfields to Lieutenant Colonel, and finally to civilian life in Brisbane - memoirs spanning eight decades of Australian life.","creator":{"@type":"Person","@id":"https://history.skitch.me/#author","name":"Robert Francis Skitch","birthDate":"1934","deathDate":"2026-07-08"},"publisher":{"@type":"Organization","@id":"https://history.skitch.me/#publisher","name":"The Skitch Family Archive","url":"https://history.skitch.me/"},"hasPart":[{"@type":"Article","@id":"https://history.skitch.me/rfs/1934-1945_junior.html","name":"Junior","url":"https://history.skitch.me/rfs/1934-1945_junior.html","datePublished":"2026-09-07T12:47:05.543809+00:00","temporalCoverage":"1934/1945"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1945-1955_the-years-between.html","name":"The Years Between","url":"https://history.skitch.me/rfs/1945-1955_the-years-between.html","datePublished":"2026-09-07T12:47:08.604926+00:00","temporalCoverage":"1945/1955"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1953-1954_in-the-navy.html","name":"In The Navy","url":"https://history.skitch.me/rfs/1953-1954_in-the-navy.html","datePublished":"2026-09-07T12:47:11.524940+00:00","temporalCoverage":"1953/1954"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html","name":"The Army Years - Part 1 - The Young Soldier Surveyor","url":"https://history.skitch.me/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html","datePublished":"2026-09-07T12:47:14.581524+00:00","temporalCoverage":"1955/1962"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html","name":"The Army Years - Part 2 - Being an Officer","url":"https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html","datePublished":"2026-09-07T12:47:17.548427+00:00","temporalCoverage":"1961/1969"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html","name":"War In Vietnam – A Surveyor’s Story - Part 1 - The Genesis","url":"https://history.skitch.me/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html","datePublished":"2026-09-07T12:47:20.645480+00:00","temporalCoverage":"1965/1966"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam.html","name":"Annex N - A Sea Voyage To South Vietnam","url":"https://history.skitch.me/rfs/1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam.html","datePublished":"2026-09-07T12:47:23.573968+00:00","temporalCoverage":"1966/1967"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html","name":"War In Vietnam – A Surveyor’s Story - Part 2 - A Developing Role","url":"https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html","datePublished":"2026-09-07T12:47:26.581427+00:00","temporalCoverage":"1966"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html","name":"War In Vietnam – A Surveyor’s Story - Part 3 - Established","url":"https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html","datePublished":"2026-09-07T12:47:29.427227+00:00","temporalCoverage":"1967"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html","name":"War In Vietnam – A Surveyor’s Story - Part 4 - Vietnam It Was","url":"https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html","datePublished":"2026-09-07T12:47:32.182292+00:00","temporalCoverage":"1967"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1969-1972_the-army-year-part-3-singapore.html","name":"The Army Years - Part 3 - Singapore","url":"https://history.skitch.me/rfs/1969-1972_the-army-year-part-3-singapore.html","datePublished":"2026-09-07T12:47:35.154911+00:00","temporalCoverage":"1969/1972"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1971-1975_the-army-years-part-4-now-a-major.html","name":"The Army Years – Part 4 - Now a Major","url":"https://history.skitch.me/rfs/1971-1975_the-army-years-part-4-now-a-major.html","datePublished":"2026-09-07T12:47:38.151847+00:00","temporalCoverage":"1971/1975"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1975-1981_the-army-years-part-5-in-command.html","name":"The Army Years - Part 5 - In Command","url":"https://history.skitch.me/rfs/1975-1981_the-army-years-part-5-in-command.html","datePublished":"2026-09-07T12:47:41.361471+00:00","temporalCoverage":"1975/1981"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1981-1990_the-public-servant.html","name":"The Public Servant","url":"https://history.skitch.me/rfs/1981-1990_the-public-servant.html","datePublished":"2026-09-07T12:47:44.307924+00:00","temporalCoverage":"1981-1990"},{"@type":"Article","@id":"https://history.skitch.me/rfs/annex-a-to-m.html","name":"Annexes A to M","url":"https://history.skitch.me/rfs/annex-a-to-m.html","datePublished":"2026-09-07T12:47:47.318385+00:00","temporalCoverage":"1966/67"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWorkSeries","@id":"https://history.skitch.me/#collection","name":"Robert Francis Skitch","url":"https://history.skitch.me/","description":"From a boyhood in the Collie coalfields to Lieutenant Colonel, and finally to civilian life in Brisbane - memoirs spanning eight decades of Australian life.","creator":{"@type":"Person","@id":"https://history.skitch.me/#author","name":"Robert Francis Skitch","birthDate":"1934","deathDate":"2026-07-08"},"publisher":{"@type":"Organization","@id":"https://history.skitch.me/#publisher","name":"The Skitch Family Archive","url":"https://history.skitch.me/","sameAs":["https://www.youtube.com/@TheSkitchFamilyArchive"]},"hasPart":[{"@type":"Article","@id":"https://history.skitch.me/rfs/1934-1945_junior.html","name":"Junior","url":"https://history.skitch.me/rfs/1934-1945_junior.html","datePublished":"2026-09-24T10:59:05.256917+00:00","temporalCoverage":"1934/1945"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1945-1955_the-years-between.html","name":"The Years Between","url":"https://history.skitch.me/rfs/1945-1955_the-years-between.html","datePublished":"2026-09-07T12:47:08.604926+00:00","temporalCoverage":"1945/1955"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1953-1954_in-the-navy.html","name":"In The Navy","url":"https://history.skitch.me/rfs/1953-1954_in-the-navy.html","datePublished":"2026-09-07T12:47:11.524940+00:00","temporalCoverage":"1953/1954"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html","name":"The Army Years - Part 1 - The Young Soldier Surveyor","url":"https://history.skitch.me/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html","datePublished":"2026-09-07T12:47:14.581524+00:00","temporalCoverage":"1955/1962"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html","name":"The Army Years - Part 2 - Being an Officer","url":"https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html","datePublished":"2026-09-07T12:47:17.548427+00:00","temporalCoverage":"1961/1969"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html","name":"War in Vietnam - A Surveyor’s Story - Part 1 - The Genesis","url":"https://history.skitch.me/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html","datePublished":"2026-09-07T12:47:20.645480+00:00","temporalCoverage":"1965/1966"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam.html","name":"Annex N - A Sea Voyage To South Vietnam","url":"https://history.skitch.me/rfs/1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam.html","datePublished":"2026-09-07T12:47:23.573968+00:00","temporalCoverage":"1966/1967"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html","name":"War in Vietnam - A Surveyor’s Story - Part 2 - A Developing Role","url":"https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html","datePublished":"2026-09-07T12:47:26.581427+00:00","temporalCoverage":"1966"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html","name":"War in Vietnam - A Surveyor’s Story - Part 3 - Established","url":"https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html","datePublished":"2026-09-07T12:47:29.427227+00:00","temporalCoverage":"1967"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html","name":"War in Vietnam - A Surveyor’s Story - Part 4 - Vietnam It Was","url":"https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html","datePublished":"2026-09-07T12:47:32.182292+00:00","temporalCoverage":"1967"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1969-1972_the-army-year-part-3-singapore.html","name":"The Army Years - Part 3 - Singapore","url":"https://history.skitch.me/rfs/1969-1972_the-army-year-part-3-singapore.html","datePublished":"2026-09-07T12:47:35.154911+00:00","temporalCoverage":"1969/1972"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1971-1975_the-army-years-part-4-now-a-major.html","name":"The Army Years - Part 4 - Now a Major","url":"https://history.skitch.me/rfs/1971-1975_the-army-years-part-4-now-a-major.html","datePublished":"2026-09-07T12:47:38.151847+00:00","temporalCoverage":"1971/1975"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1975-1981_the-army-years-part-5-in-command.html","name":"The Army Years - Part 5 - In Command","url":"https://history.skitch.me/rfs/1975-1981_the-army-years-part-5-in-command.html","datePublished":"2026-09-07T12:47:41.361471+00:00","temporalCoverage":"1975/1981"},{"@type":"Article","@id":"https://history.skitch.me/rfs/1981-1990_the-public-servant.html","name":"The Public Servant","url":"https://history.skitch.me/rfs/1981-1990_the-public-servant.html","datePublished":"2026-09-07T12:47:44.307924+00:00","temporalCoverage":"1981-1990"},{"@type":"Article","@id":"https://history.skitch.me/rfs/annex-a-to-m.html","name":"Annexes A to M","url":"https://history.skitch.me/rfs/annex-a-to-m.html","datePublished":"2026-09-07T12:47:47.318385+00:00","temporalCoverage":"1966/67"}]}</script>
+<style>
+.sn{background:#ffffff;border-bottom:1px solid #e0dfd8;position:relative;z-index:50;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.sn-in{max-width:1120px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:20px;height:56px}
+.sn-mark{font:600 16px/1 Georgia,"Times New Roman",serif;color:#111110;text-decoration:none;white-space:nowrap}
+.sn-mark span{color:#6b6b3a}
+.sn-links{margin-left:auto;display:flex;gap:26px;font-size:14px}
+.sn-links a{color:#444440;text-decoration:none;padding:18px 0 16px;border-bottom:2px solid transparent}
+.sn-links a:hover{color:#111110}
+.sn-links a[aria-current]{color:#111110;border-bottom-color:#6b6b3a}
+.sn-menu{display:none;margin-left:auto;font-size:14px}
+.sn-menu summary{list-style:none;cursor:pointer;border:1px solid #e0dfd8;border-radius:6px;padding:6px 12px;color:#444440;background:#ffffff}
+.sn-menu summary::-webkit-details-marker{display:none}
+.sn-menu[open] .sn-drop{position:absolute;left:0;right:0;top:56px;background:#ffffff;border-bottom:1px solid #e0dfd8;padding:4px 20px 12px;box-shadow:0 10px 20px -12px rgba(0,0,0,.25)}
+.sn-drop a{display:block;padding:12px 0;border-bottom:1px solid #e0dfd8;color:#111110;text-decoration:none;font-size:16px}
+.sn-drop a:last-child{border-bottom:0}
+@media(max-width:720px){.sn-links{display:none}.sn-menu{display:block}}
+.sf{margin-top:4.5rem;background:#f8f8f5;border-top:1px solid #e0dfd8;font:14px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:#444440}
+.sf-in{max-width:1120px;margin:0 auto;padding:40px 20px 26px;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px}
+.sf h2{font:600 11px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6b6b3a;margin:0 0 12px}
+.sf p{margin:0 0 10px}.sf ul{list-style:none;margin:0;padding:0}.sf li{margin:0 0 8px}
+.sf a{color:#444440;text-decoration:none;border-bottom:1px solid #e0dfd8}
+.sf a:hover{color:#111110;border-bottom-color:#6b6b3a}
+.sf-mk{font:600 18px Georgia,"Times New Roman",serif;color:#111110;margin:0 0 8px}
+.sf-legal{max-width:1120px;margin:0 auto;padding:16px 20px 30px;border-top:1px solid #e0dfd8;font-size:12px;line-height:1.7;color:#888880}
+.sf-legal p{margin:0 0 4px}.sf-legal a{border-bottom-color:#e0dfd8}
+@media(max-width:720px){.sf-in{grid-template-columns:1fr;gap:26px}}
+/* External links (site links are relative, so an absolute http(s) href means
+   another site) carry a small ↗, silent for screen readers. */
+.sf a[href^="http"]::after,article a[href^="http"]::after{content:"\2197";content:"\2197" / "";display:inline-block;margin-left:.2em;font:600 .72em/1 ui-sans-serif,system-ui,sans-serif;vertical-align:.12em;color:#6b6b3a;text-decoration:none}
+</style>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "18ebbad2ce5841018de0342a05ac41ad"}'></script><!-- End Cloudflare Web Analytics -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="670cdf5f-6d4e-4166-bb43-62f8d05a6e1d"></script>
 </head>
 <body>
+<header class="sn"><div class="sn-in">
+  <a class="sn-mark" href="./">The Skitch <span>Family Archive</span></a>
+  <nav class="sn-links" aria-label="Site"><a href="./" aria-current="page">Home</a><a href="mailto:history@skitch.me">Contact</a></nav>
+  <details class="sn-menu"><summary>Menu</summary><nav class="sn-drop" aria-label="Site"><a href="./" aria-current="page">Home</a><a href="mailto:history@skitch.me">Contact</a></nav></details>
+</div></header>
 <div class="page">
 
   <div class="masthead">
-    <p class="eyebrow">The Skitch Family Archive</p>
+    <p class="eyebrow">The Memoirs of</p>
     <h1>Robert Francis Skitch</h1>
     <p class="dates">1934 – 2026</p>
     <p class="places">Collie, Western Australia · Brisbane, Queensland</p>
     <p class="tagline">From a boyhood in the Collie coalfields to Lieutenant Colonel, and finally to civilian life in Brisbane - memoirs spanning eight decades of Australian life.</p>
-    <p class="dedication">For Mum and Dad. For the love. For the stories.</p>
+    
   </div>
 
   <div class="banner">
@@ -149,6 +190,7 @@
   </div>
 
   <a class="cta" href="https://notebooklm.google.com/notebook/3a3bfc7e-fd73-49c6-a7e1-c4863af87c59" target="_blank" rel="noopener">
+    <span class="cta-spark" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M11 3c.55 4.3 2.3 6.9 8.5 8.5-6.2 1.6-7.95 4.2-8.5 8.5-.55-4.3-2.3-6.9-8.5-8.5C8.7 9.9 10.45 7.3 11 3z" fill="currentColor"/><path d="M19.5 1.5c.2 1.5.8 2.4 2.9 3-2.1.6-2.7 1.5-2.9 3-.2-1.5-.8-2.4-2.9-3 2.1-.6 2.7-1.5 2.9-3z" fill="currentColor" opacity=".7"/></svg></span>
     <div>
       <p class="cta-title">Explore with NotebookLM</p>
       <p class="cta-sub">Ask questions across the entire collection · every answer drawn from Bob's own words</p>
@@ -156,7 +198,7 @@
     <span class="cta-arrow">→</span>
   </a>
 
-  <p class="section-label">Memoirs</p>
+  <p class="section-label" id="memoirs">Memoirs</p>
 
   <div class="timeline">
     
@@ -166,15 +208,15 @@
         <span class="tgroup-name">Early life & service</span>
       </div>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1934-1945_junior.html">
+      <a class="memoir-item" href="rfs/1934-1945_junior.html">
         <span class="memoir-period">1934–1945</span><span class="memoir-title">Junior</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">3h5m</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1945-1955_the-years-between.html">
+      <a class="memoir-item" href="rfs/1945-1955_the-years-between.html">
         <span class="memoir-period">1945–1955</span><span class="memoir-title">The Years Between</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">8h53m</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1953-1954_in-the-navy.html">
+      <a class="memoir-item" href="rfs/1953-1954_in-the-navy.html">
         <span class="memoir-period">1953–1954</span><span class="memoir-title">In The Navy</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">2h2m</span><span class="memoir-arrow">→</span>
       </a>
       
@@ -183,26 +225,26 @@
     <div class="tgroup">
       <div class="tgroup-header">
         <div class="tdot"></div>
-        <span class="tgroup-name">Army Years</span>
+        <span class="tgroup-name">The Army Years</span>
       </div>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html">
+      <a class="memoir-item" href="rfs/1955-1962_the-army-years-part-1-the-young-soldier-surveyor.html">
         <span class="memoir-period">1955–1962</span><span class="memoir-title">The Young Soldier Surveyor</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">12h11m</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1961-1969_the-army-years-part-2-being-an-officer.html">
+      <a class="memoir-item" href="rfs/1961-1969_the-army-years-part-2-being-an-officer.html">
         <span class="memoir-period">1961–1969</span><span class="memoir-title">Being an Officer</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">4h13m</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1969-1972_the-army-year-part-3-singapore.html">
+      <a class="memoir-item" href="rfs/1969-1972_the-army-year-part-3-singapore.html">
         <span class="memoir-period">1969–1972</span><span class="memoir-title">Singapore</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">4h57m</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1971-1975_the-army-years-part-4-now-a-major.html">
+      <a class="memoir-item" href="rfs/1971-1975_the-army-years-part-4-now-a-major.html">
         <span class="memoir-period">1971–1975</span><span class="memoir-title">Now a Major</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">2h58m</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1975-1981_the-army-years-part-5-in-command.html">
+      <a class="memoir-item" href="rfs/1975-1981_the-army-years-part-5-in-command.html">
         <span class="memoir-period">1975–1981</span><span class="memoir-title">In Command</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">9h24m</span><span class="memoir-arrow">→</span>
       </a>
       
@@ -211,30 +253,30 @@
     <div class="tgroup">
       <div class="tgroup-header">
         <div class="tdot"></div>
-        <span class="tgroup-name">Vietnam - A Surveyor’s Story</span>
+        <span class="tgroup-name">War in Vietnam - A Surveyor’s Story</span>
       </div>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html">
+      <a class="memoir-item" href="rfs/1965-1966_war-in-vietnam-a-surveyors-story-part-1-the-genesis.html">
         <span class="memoir-period">1965–1966</span><span class="memoir-title">The Genesis</span><span class="memoir-meta">25k words</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html">
+      <a class="memoir-item" href="rfs/1966_war-in-vietnam-a-surveyors-story-part-2-a-developing-role.html">
         <span class="memoir-period">1966</span><span class="memoir-title">A Developing Role</span><span class="memoir-meta">54k words</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html">
+      <a class="memoir-item" href="rfs/1967_war-in-vietnam-a-surveyors-story-part-3-established.html">
         <span class="memoir-period">1967</span><span class="memoir-title">Established</span><span class="memoir-meta">22k words</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html">
+      <a class="memoir-item" href="rfs/1967_war-in-vietnam-a-surveyors-story-part-4-vietnam-it-was.html">
         <span class="memoir-period">1967</span><span class="memoir-title">Vietnam It Was</span><span class="memoir-meta">3k words</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/annex-a-to-m.html">
+      <a class="memoir-item" href="rfs/annex-a-to-m.html">
         <span class="memoir-period">1966–67</span><span class="memoir-title">Annexes A to M</span><span class="memoir-meta"><1k words</span><span class="memoir-arrow">→</span>
       </a>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam.html">
+      <a class="memoir-item" href="rfs/1966-1967_war-in-vietnam_annex-n-a-sea-voyage-to-south-vietnam.html">
         <span class="memoir-period">1966–1967</span><span class="memoir-title">Annex N - A Sea Voyage To South Vietnam</span><span class="memoir-meta">2k words</span><span class="memoir-arrow">→</span>
       </a>
       
@@ -246,7 +288,7 @@
         <span class="tgroup-name">Public Service Years</span>
       </div>
       
-      <a class="memoir-item" href="https://history.skitch.me/rfs/1981-1990_the-public-servant.html">
+      <a class="memoir-item" href="rfs/1981-1990_the-public-servant.html">
         <span class="memoir-period">1981-1990</span><span class="memoir-title">The Public Servant</span><span class="memoir-audio" title="Audio narration available" aria-label="Audio narration available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></span><span class="memoir-meta">7h27m</span><span class="memoir-arrow">→</span>
       </a>
       
@@ -260,25 +302,30 @@
       <div class="closing-col">
         <h3>The archive</h3>
         <p>My father wrote these memoirs between 1999 and 2018, setting down nearly a million words from memory — a remarkable act of personal record-keeping that I feel privileged to have inherited.</p><p>I have digitised, edited, and published the collection here so that his stories are accessible to family, friends, and anyone with an interest in Australian life across the twentieth century.</p><p>The documents are presented as he wrote them, with only light corrections for formatting. The voice is entirely his.</p>
-        <p class="signoff">— Christopher Skitch</p>
+        
+        <p class="signoff">— <a class="signoff-link" href="https://www.linkedin.com/in/cskitch/" target="_blank" rel="noopener noreferrer" aria-label="Christopher Skitch on LinkedIn (opens in a new tab)">Christopher Skitch<svg class="li" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></p>
+        
       </div>
       <div class="closing-col">
-        <h3>Exploring with NotebookLM</h3>
+        <h3>Exploring with Gemini Notebook</h3>
         <p>I have uploaded the complete collection to Google NotebookLM — an AI research tool that works exclusively from the source documents, so every answer it gives is grounded in Dad's own words.</p><p>As well as answering questions about his life, NotebookLM can generate:</p>
         
         <ul class="notebooklm-features">
           <li>Analytical reports on themes across the memoirs</li><li>A glossary of people, places, and military terms</li><li>Guided slideshows through key chapters</li><li>Audio podcasts narrating the collection</li>
         </ul>
         
-        <p style="margin-top:1rem"><a href="https://notebooklm.google.com/notebook/3a3bfc7e-fd73-49c6-a7e1-c4863af87c59" style="color:var(--khaki);font-family:system-ui,sans-serif;font-size:13px">Open the collection in NotebookLM →</a></p>
+        <p style="margin-top:1rem"><a href="https://notebooklm.google.com/notebook/3a3bfc7e-fd73-49c6-a7e1-c4863af87c59" style="color:var(--khaki);font-family:system-ui,sans-serif;font-size:13px" target="_blank" rel="noopener noreferrer">Open the collection in Gemini Notebook →</a></p>
       </div>
     </div>
   </div>
 
   
-  <footer><p>❖ The Skitch Family Archive ❖</p><p>Memoirs by Robert Francis Skitch (1934–2026). Text, compilation and editorial material © Christopher M.R. Skitch, by assignment from his estate. Licensed CC BY-NC-ND 4.0 - read and share with attribution; no commercial use or adaptations. Document processing (HTML + NotebookLM) by Notebook Forge.</p><p>Archive last updated 7 September 2026.</p></footer>
-  
 
 </div>
+<div class="sf" role="contentinfo"><div class="sf-in">
+  <div><p class="sf-mk">The Skitch Family Archive</p><p>The memoirs of Robert Francis Skitch, published as they were written.</p></div>
+  <div><h2>Explore</h2><ul><li><a href="https://notebooklm.google.com/notebook/3a3bfc7e-fd73-49c6-a7e1-c4863af87c59" target="_blank" rel="noopener noreferrer">Explore with NotebookLM</a></li><li><a href="https://www.youtube.com/@TheSkitchFamilyArchive" target="_blank" rel="noopener noreferrer">The archive on YouTube</a></li></ul></div>
+  <div><h2>Get in touch</h2><ul><li><a href="mailto:history@skitch.me">history@skitch.me</a></li></ul><p>For family, for those who knew Bob, and for institutions interested in his papers.</p></div>
+</div><div class="sf-legal"><p>❖ The Skitch Family Archive ❖</p><p>Memoirs by Robert Francis Skitch (1934–2026). Text, compilation and editorial material © Christopher M.R. Skitch, by assignment from his estate. Licensed CC BY-NC-ND 4.0 - read and share with attribution; no commercial use or adaptations. Document processing (HTML + NotebookLM) by Notebook Forge.</p><p>Archive last updated 24 September 2026.</p></div></div>
 </body>
 </html>
