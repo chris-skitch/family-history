@@ -40,7 +40,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 91480,
-      "published": "2026-09-24T11:23:13.957291+00:00"
+      "published": "2026-09-24T11:23:17.097684+00:00"
     },
     {
       "stem": "1953-1954_in-the-navy",
@@ -54,7 +54,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 19903,
-      "published": "2026-09-24T10:59:15.488573+00:00"
+      "published": "2026-09-24T11:23:17.333845+00:00"
     },
     {
       "stem": "1955-1962_the-army-years-part-1-the-young-soldier-surveyor",
@@ -267,5 +267,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-09-24T11:23:13.957291+00:00"
+  "rebuilt": "2026-09-24T11:23:17.333845+00:00"
 }
