@@ -613,6 +613,9 @@
   article .table-wrap thead th{font:600 .7rem ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:none;border-bottom:2px solid var(--accent);padding-bottom:.5rem;}
   article .table-wrap td:first-child{font:600 .85rem ui-sans-serif,system-ui,sans-serif;color:var(--accent-deep);white-space:nowrap;padding-top:.85rem;width:5.2rem;}
   article .table-wrap td:last-child:not(:nth-child(2)){color:var(--ink-soft);font-size:.88rem;}
+  /* A promotion is the bold rank opening an event cell; like the iOS reader,
+     it carries a small accent triangle. Decorative, so screen readers skip it. */
+  article .table-wrap td:nth-child(2) > strong:first-child::before{content:"\25B2";content:"\25B2" / "";display:inline-block;margin-right:.3em;font-size:.82em;vertical-align:.04em;color:var(--accent);}
   @media (max-width:600px){
     article .table-wrap thead{display:none;}
     article .table-wrap tr{display:block;padding:.75rem 0;border-bottom:1px solid var(--rule);}
