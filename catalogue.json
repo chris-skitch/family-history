@@ -222,7 +222,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 69781,
-      "published": "2026-11-11T21:53:06.769481+00:00"
+      "published": "2026-11-11T21:53:09.163109+00:00"
     },
     {
       "stem": "2004_three-days-in-berlin",
@@ -250,7 +250,7 @@
       "source": "generated",
       "needs_description": true,
       "word_count": 100,
-      "published": "2026-10-13T10:40:54.364358+00:00"
+      "published": "2026-11-11T21:53:09.470418+00:00"
     },
     {
       "stem": "untitled",
@@ -267,5 +267,5 @@
       "published": ""
     }
   ],
-  "rebuilt": "2026-11-11T21:53:06.769481+00:00"
+  "rebuilt": "2026-11-11T21:53:09.470418+00:00"
 }
